@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import './globals.css'
+import 'katex/dist/katex.min.css'
 
 export const metadata = {
   // Define your metadata here
@@ -65,7 +66,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           footer={footer}
           copyPageButton={false}
           darkMode={false}
-          sidebar={{ toggleButton: false }}
+          sidebar={{ toggleButton: false, defaultMenuCollapseLevel: 1 }}
+
         // ... Your additional layout options
         >
           {children}
