@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @theme {
   /* Menghubungkan variabel font dari Next.js (Geist) ke utility Tailwind */
   --font-sans: var(--font-geist-sans);
@@ -15,5 +14,17 @@
 @layer base {
   body {
     @apply transition-colors duration-300 ease-in-out;
+  }
+
+  html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+  
+  html,
+  body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
