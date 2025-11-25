@@ -4,7 +4,7 @@
 
 ![Project Banner](public/image.png)
 
-## 🚀 Teknologi Utama
+## 🚀 Technology Used
 
 Proyek ini dibangun menggunakan _tech stack_ terbaru (Next.js 16 & Tailwind v4):
 
@@ -15,7 +15,7 @@ Proyek ini dibangun menggunakan _tech stack_ terbaru (Next.js 16 & Tailwind v4):
 - **Search Engine:** [Pagefind](https://pagefind.app/) (Static search)
 - **Optimasi:** React Compiler & Turbopack enabled
 
-## ✨ Fitur
+## ✨ Features
 
 - 📝 **Penulisan MDX:** Menulis konten semudah menulis Markdown dengan dukungan komponen React.
 - 🌓 **Dark Mode:** Dukungan tema gelap/terang bawaan (via `next-themes`).
@@ -23,9 +23,9 @@ Proyek ini dibangun menggunakan _tech stack_ terbaru (Next.js 16 & Tailwind v4):
 - 🔍 **Pencarian Cepat:** Indeksasi konten statis menggunakan Pagefind saat _build_.
 - 📱 **Responsif:** Tampilan antarmuka yang ramah.
 
-## 🛠️ Instalasi & Menjalankan Lokal
+## 🛠️ Installation
 
-Pastikan Anda telah menginstal **Node.js** dan **pnpm** sebelum memulai.
+Required: nodejs & pnpm
 
 1. **Clone repository**
    ```bash
