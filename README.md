@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 Fyy's Notebook
 
-## Getting Started
+**Fyy's Notebook** adalah situs dokumentasi pribadi ("Digital Garden") yang dibangun untuk menyimpan catatan belajar, materi kuliah, dan dokumentasi teknis. Proyek ini dirancang dengan fokus pada kecepatan, kemudahan penulisan konten (MDX), dan tampilan yang modern.
 
-First, run the development server:
+![Project Banner](public/file.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Teknologi Utama
+
+Proyek ini dibangun menggunakan _tech stack_ terbaru (Next.js 16 & Tailwind v4):
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Dokumentasi:** [Nextra 4.6](https://nextra.site/)
+- **Bahasa:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) & `tw-animate-css`
+- **Search Engine:** [Pagefind](https://pagefind.app/) (Static search)
+- **Optimasi:** React Compiler & Turbopack enabled
+
+## ✨ Fitur
+
+- 📝 **Penulisan MDX:** Menulis konten semudah menulis Markdown dengan dukungan komponen React.
+- 🌓 **Dark Mode:** Dukungan tema gelap/terang bawaan (via `next-themes`).
+- ⚡ **Performa Tinggi:** Menggunakan Next.js App Router dengan Turbopack sebagai bundler.
+- 🔍 **Pencarian Cepat:** Indeksasi konten statis menggunakan Pagefind saat _build_.
+- 📱 **Responsif:** Tampilan antarmuka yang ramah.
+
+## 🛠️ Instalasi & Menjalankan Lokal
+
+Pastikan Anda telah menginstal **Node.js** dan **pnpm** sebelum memulai.
+
+1. **Clone repository**
+   ```bash
+   git clone [https://github.com/fyydsz/webnotes.git](https://github.com/fyydsz/webnotes.git)
+   cd webnotes
+   ```
+2. Instal dependency menggunakan pnpm sebagai package manager.
+   ```
+   pnpm install
+   ```
+3. Jalankan server
+   ```
+   pnpm dev
+   ```
+   Buka http://localhost:3000 di browser
+
+## 📂 App Structure
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+.
+├── app/
+│   ├── (documentation)/docs/  # Layout dan konfigurasi halaman dokumentasi
+│   ├── (landing-page)/        # Halaman depan (Home)
+│   └── _meta.global.tsx       # Konfigurasi navigasi/sidebar global
+├── content/                   # 📝 Tempat menyimpan file materi (MDX)
+│   ├── bahasa_indonesia/
+│   ├── logika_matematika/
+│   ├── index.mdx
+│   └── tentang.mdx
+├── public/                    # Aset statis (gambar, icon)
+├── next.config.ts             # Konfigurasi Next.js & Nextra
+└── package.json
+```
