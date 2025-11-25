@@ -62,20 +62,13 @@ export default function Home() {
             Kumpulan materi kuliah, tutorial koding, dsb hehe.<br/>Ditulis dengan format yang rapi, mudah dibaca, dan terstruktur.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link
               href="/docs"
               className="h-12 px-8 rounded-full bg-black dark:bg-white text-white dark:text-black font-medium flex items-center justify-center hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all active:scale-95"
             >
               Mulai Membaca
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </Link>
-            
-            <Link
-              href="/docs/tentang"
-              className="h-12 px-8 rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-900 dark:text-white font-medium flex items-center justify-center transition-all"
-            >
-              Tentang Penulis
             </Link>
           </div>
         </div>

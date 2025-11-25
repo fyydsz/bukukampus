@@ -1,6 +1,10 @@
 const BAHASA_INDONESIA: Record<string, string> = {
   sejarah_bahasa_indonesia: '',
-  kedudukan_fungsi: ''
+  kedudukan_fungsi: '',
+  diksi: '',
+  paragraf: '',
+  kalimat: '',
+  karangan: ''
 }
 
 const LOGIKA_MATEMATIKA: Record<string, string> = {
