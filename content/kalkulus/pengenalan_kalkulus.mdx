@@ -1,0 +1,75 @@
+---
+title: Pengenalan Sistem Bilangan
+description: Memahami bilangan real, imajiner, dan kompleks sebagai fondasi Kalkulus 1
+---
+
+import { Latex } from "../../components/latex"
+import { Callout } from 'nextra/components'
+
+# 🧮 Pengenalan Kalkulus
+
+Selamat datang di materi Kalkulus 1. Sebelum mempelajari Limit dan Turunan, kita harus memahami bahasa dasar matematika yaitu **Sistem Bilangan**.
+
+## Bilangan Real (<Latex>\mathbb\{R\}</Latex>)
+
+Bilangan real adalah bilangan yang dapat digambarkan di sepanjang garis bilangan tak hingga.
+
+> **Definisi:** Bilangan yang ada di garis bilangan.
+
+**Contoh:**
+
+<Latex block>{`
+  2, \\quad 4, \\quad \\sqrt{2}, \\quad \\sqrt{\\frac{14}{3}}, \\quad -5
+`}</Latex>
+
+---
+
+## Bilangan Imajiner (<Latex>i</Latex>)
+
+Bilangan imajiner muncul ketika kita mencoba mencari akar kuadrat dari bilangan negatif. Satuan dasar imajiner dilambangkan dengan <Latex>i</Latex>.
+
+<Callout type="info" emoji="💡">
+  **Ingat!** <Latex block>{`\\sqrt{-1} = i \\quad \\text{maka} \\quad i^2 = -1`}</Latex>
+</Callout>
+
+**Contoh:**
+* <Latex>{`\\sqrt{-4} = \\sqrt{4 \\cdot -1} = 2i`}</Latex>
+* <Latex>{`\\sqrt{-9} = 3i`}</Latex>
+
+---
+
+## Bilangan Kompleks (<Latex>\mathbb\{C\}</Latex>)
+
+Bilangan kompleks adalah gabungan dari bilangan riil dan bilangan imajiner. Biasanya dinotasikan dengan huruf <Latex>z</Latex>.
+
+<Latex block>z = a + bi</Latex>
+Dimana:
+* <Latex>a</Latex> = Bagian Riil
+* <Latex>b</Latex> = Bagian Imajiner
+
+### Contoh Soal
+1.  **Bentuk Umum:** <Latex>3 + 2i</Latex>, <Latex>4 + 6i</Latex>
+2.  **Operasi Perkalian:** <Latex>{`\\begin{aligned} 2i \\cdot 3i &= 6i^2 \\\\ \\end{aligned}`}</Latex>
+
+    <Latex>{`
+      \\begin{aligned}
+      2i \\cdot 3i &= 6i^2 \\\\
+      &= 6(-1) \\\\
+      &= -6
+      \\end{aligned}
+    `}</Latex>
+
+---
+
+## Roadmap Materi Kalkulus 1
+
+Berdasarkan silabus kuliah, berikut adalah alur belajar yang akan kita tempuh:
+
+1.  ✅ **Bilangan Real** (Sistem Bilangan)
+2.  ⬜ **Turunan & Limit**
+3.  ⬜ **Limit Turunan**
+4.  ⬜ **Integral**
+
+### PR / Challenge
+Coba pelajari bagaimana cara melakukan operasi pembagian pada bilangan kompleks:
+<Latex block>{`\\frac{z_1}{z_2} = ?`}</Latex>

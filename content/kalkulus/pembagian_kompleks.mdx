@@ -1,0 +1,100 @@
+---
+title: Pembagian Bilangan Kompleks
+description: Cara melakukan pembagian bilangan kompleks dengan metode konjugat
+---
+
+import { Callout } from 'nextra/components'
+import { Latex } from '../../components/latex'
+
+# ➗ Pembagian Bilangan Kompleks
+
+Untuk melakukan pembagian pada bilangan kompleks, kita tidak bisa membaginya secara langsung seperti bilangan biasa. Kita harus menggunakan bantuan **Konjugat** (Sekawan) dari penyebutnya.
+
+## Konsep Dasar: Konjugat (<Latex>\bar\{z\}</Latex>)
+
+Konjugat dari sebuah bilangan kompleks <Latex>z = a + bi</Latex> adalah bilangan yang memiliki bagian imajiner dengan tanda yang berlawanan.
+
+<Latex block>{`
+  \\text{Jika } z = a + bi \\quad \\longrightarrow \\quad \\bar{z} = a - bi
+`}</Latex>
+
+**Contoh:**
+* <Latex>{`z = 2 + i \\quad \\rightarrow \\quad \\bar{z} = 2 - i`}</Latex>
+* <Latex>{`z = 3 - 2i \\quad \\rightarrow \\quad \\bar{z} = 3 + 2i`}</Latex>
+
+## Rumus Pembagian
+
+Prinsipnya adalah mengalikan pembilang dan penyebut dengan **konjugat dari penyebut**.
+
+<Latex block>{`
+  \\frac{z_1}{z_2} = \\frac{a + bi}{c + di} \\cdot \\frac{c - di}{c - di}
+`}</Latex>
+ 
+<Callout type="warning" emoji="⚠️">
+  **Ingat!** Identitas imajiner:
+  <Latex block>i^2 = -1</Latex>
+</Callout>
+
+---
+
+## Contoh Soal & Pembahasan
+
+### Soal 1
+Diketahui <Latex>z_1 = 5 + 4i</Latex> dan <Latex>z_2 = 3 - 2i</Latex>. Tentukan hasil pembagiannya!
+
+**Penyelesaian:**
+Kalikan dengan sekawan penyebut (<Latex>3+2i</Latex>):
+
+<Latex block>{`
+  \\begin{aligned}
+  \\frac{z_1}{z_2} &= \\frac{5+4i}{3-2i} \\cdot \\frac{3+2i}{3+2i} \\\\
+  &= \\frac{15 + 10i + 12i + 8i^2}{3^2 + 2^2} \\\\
+  &= \\frac{15 + 22i + 8(-1)}{9 + 4} \\\\
+  &= \\frac{15 - 8 + 22i}{13} \\\\
+  &= \\frac{7 + 22i}{13} \\\\
+  &= \\frac{7}{13} + \\frac{22}{13}i
+  \\end{aligned}
+`}</Latex>
+
+---
+
+### Soal 2
+Diketahui <Latex>z_1 = 2 + i</Latex> dan <Latex>z_2 = 1 - \\sqrt\{-4\}</Latex>.
+
+**Langkah awal:**
+Sederhanakan dulu <Latex>z_2</Latex>:
+<Latex block>{`
+  z_2 = 1 - \\sqrt{4 \\cdot -1} = 1 - 2i
+`}</Latex>
+
+**Penyelesaian:**
+Kalikan dengan sekawan penyebut (<Latex>1+2i</Latex>):
+
+<Latex block>{`
+  \\begin{aligned}
+  \\frac{z_1}{z_2} &= \\frac{2+i}{1-2i} \\cdot \\frac{1+2i}{1+2i} \\\\
+  &= \\frac{2 + 4i + i + 2i^2}{1 - 4i^2} \\\\
+  &= \\frac{2 + 5i + 2(-1)}{1 - 4(-1)} \\\\
+  &= \\frac{2 - 2 + 5i}{1 + 4} \\\\
+  &= \\frac{5i}{5} \\\\
+  &= i
+  \\end{aligned}
+`}</Latex>
+
+---
+
+### Soal 3 (Kasus Khusus)
+Tentukan hasil dari <Latex>\\frac\{5\}\{i\}</Latex>!
+
+**Penyelesaian:**
+Kita bisa menganggap penyebutnya sebagai <Latex>0 + i</Latex>, maka sekawannya adalah <Latex>0 - i</Latex> (atau <Latex>-i</Latex>).
+
+<Latex block>{`
+  \\begin{aligned}
+  \\frac{5}{i} &= \\frac{5}{i} \\cdot \\frac{-i}{-i} \\\\
+  &= \\frac{-5i}{-i^2} \\\\
+  &= \\frac{-5i}{-(-1)} \\\\
+  &= \\frac{-5i}{1} \\\\
+  &= -5i
+  \\end{aligned}
+`}</Latex>
