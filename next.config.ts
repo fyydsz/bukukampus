@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
 
 const withNextra = nextra({
   contentDirBasePath: '/docs',
-  latex: true // Or even nested e.g. `/docs/advanced`
+  latex: {
+    renderer: 'katex', // 'katex' | 'mathjax'}
+    options: {}
+  }
 })
 export default withNextra(nextConfig);

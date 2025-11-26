@@ -12,6 +12,11 @@ const LOGIKA_MATEMATIKA: Record<string, string> = {
   tabel_kebenaran: ''
 }
 
+const KALKULUS: Record<string, string> = {
+  pengenalan_kalkulus: '',
+  pembagian_kompleks: ''
+}
+
 const DOCS_ITEMS: Record<string, any> = {
   index: "Welcome",
   tentang: '',
@@ -22,7 +27,11 @@ const DOCS_ITEMS: Record<string, any> = {
   logika_matematika: {
     title: "Logika Matematika",
     items: LOGIKA_MATEMATIKA
-  } 
+  },
+  kalkulus: {
+    title: "Kalkulus",
+    items: KALKULUS
+  }
 }
 
 export default {
