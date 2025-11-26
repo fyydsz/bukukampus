@@ -14,7 +14,7 @@ const LOGIKA_MATEMATIKA: Record<string, string> = {
 
 const KALKULUS: Record<string, string> = {
   pengenalan_kalkulus: '',
-  pembagian_kompleks: ''
+  bilangan_kompleks: '',
 }
 
 const DOCS_ITEMS: Record<string, any> = {
