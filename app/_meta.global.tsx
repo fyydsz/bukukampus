@@ -19,7 +19,6 @@ const KALKULUS: Record<string, string> = {
 }
 
 const DOCS_ITEMS: Record<string, any> = {
-  index: "Welcome",
   tentang: '',
   bahasa_indonesia: {
     title: "Bahasa Indonesia",
@@ -39,11 +38,12 @@ export default {
   index: {
     title: "Home",
     type: "page",
+
   },
   docs: {
     title: "Documentation",
     type: "page",
-    items: DOCS_ITEMS
+    items: DOCS_ITEMS,
   },
 
 }
