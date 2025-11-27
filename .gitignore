@@ -43,5 +43,3 @@ next-env.d.ts
 
 .vercel
 .env*.local
-
-git-meta.json

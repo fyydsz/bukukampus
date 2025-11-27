@@ -3,8 +3,9 @@
   "version": "0.1.7",
   "private": true,
   "scripts": {
+    "prepost": "node scripts/gen-meta.js",
     "dev": "node scripts/gen-meta.js && next dev",
-    "build": "node scripts/gen-meta.js && next build",
+    "build": "next build",
     "dev:webpack": "next dev --webpack",
     "build:webpack": "next build --webpack",
     "start": "next start",
