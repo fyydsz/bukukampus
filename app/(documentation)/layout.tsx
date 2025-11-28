@@ -7,6 +7,7 @@ import { getPageMap } from 'nextra/page-map'
 import './globals.css'
 import 'katex/dist/katex.min.css'
 import { LastUpdated } from '@/components/last-updated';
+import { BannerWrapper } from '@/components/banner-wrapper';
 
 const navbar = (
   <Navbar
@@ -39,7 +40,7 @@ const footer = <Footer>MIT {new Date().getFullYear()} © Fyy's Notes.</Footer>
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html 
+    <html
       // Not required, but good for SEO
       lang="id"
       // Required to be set
@@ -53,7 +54,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       </Head>
       <body>
         <Layout
-          banner={<Banner storageKey="nextra-banner" dismissible={true}>Documentation is on progress 📚</Banner>}
+          banner={
+            <BannerWrapper storageKey="nextra-banner">
+            <Banner storageKey="nextra-banner" dismissible={true}>
+              Documentation is on progress 📚
+            </Banner>
+            </BannerWrapper>
+          }
           navbar={navbar}
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/fyydsz/webnotes/tree/master"
@@ -62,9 +69,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           darkMode={false}
           sidebar={{ toggleButton: false, defaultMenuCollapseLevel: 1 }}
           lastUpdated={<LastUpdated />}
-          feedback={{content: "Beri kami saran atau masukan", labels: "feedback"}}
+          feedback={{ content: "Beri kami saran atau masukan", labels: "feedback" }}
           editLink={"Edit halaman ini di Github"}
-          toc={{backToTop: "Kembali ke atas", title: "Daftar Isi Halaman"}}
+          toc={{ backToTop: "Kembali ke atas", title: "Daftar Isi Halaman" }}
 
         // ... Your additional layout options
         >
