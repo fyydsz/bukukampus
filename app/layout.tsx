@@ -8,7 +8,6 @@ import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LastUpdated } from '@/components/last-updated';
-import { BannerWrapper } from '@/components/banner-wrapper';
 
 // --- Konfigurasi Font (Dari Landing Page) ---
 const geistSans = Geist({
@@ -110,11 +109,9 @@ export default async function RootLayout({
       >
         <Layout
           banner={
-            <BannerWrapper storageKey="nextra-banner">
-              <Banner storageKey="nextra-banner" dismissible={true}>
-                Documentation is on progress 📚
-              </Banner>
-            </BannerWrapper>
+            <Banner storageKey="nextra-banner" dismissible={true}>
+              Documentation is on progress 📚
+            </Banner>
           }
           navbar={navbar}
           pageMap={await getPageMap()}
