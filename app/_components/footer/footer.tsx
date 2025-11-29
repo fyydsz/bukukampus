@@ -32,9 +32,39 @@ export const Footer: FC<ComponentProps<'footer'>> = ({
             </Switchers>
           </div>
 
-          {/* Sisi Kanan: Teks */}
-          <div className="x:flex x:items-center x:justify-end x:text-right">
-            {children}
+          {/* Sisi Kanan: Teks dan Kontak */}
+          <div className="x:flex x:items-center x:justify-end x:text-right x:gap-3">
+            {/* Kontak: Instagram, Github, Learn */}
+            <div className="x:flex x:items-center x:gap-0 x:mr-3">
+              <a
+                href="https://www.instagram.com/fyydsz_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="x:text-gray-600 x:dark:text-gray-400 x:text-sm x:hover:underline"
+                aria-label="Instagram"
+              >
+                Instagram
+              </a>
+              <span className="x:px-2 x:text-gray-400 x:dark:text-gray-500" aria-hidden="true">|</span>
+              <a
+                href="https://github.com/fyydsz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="x:text-gray-600 x:dark:text-gray-400 x:text-sm x:hover:underline"
+                aria-label="GitHub"
+              >
+                GitHub
+              </a>
+              <span className="x:px-2 x:text-gray-400 x:dark:text-gray-500" aria-hidden="true">|</span>
+              <a
+                href="/docs"
+                className="x:text-gray-600 x:dark:text-gray-300 x:text-sm x:hover:underline"
+                aria-label="Learn"
+              >
+                Learn
+              </a>
+            </div>
+            <div>{children}</div>
           </div>
           
         </div>

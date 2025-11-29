@@ -124,7 +124,7 @@ export default async function RootLayout({
           toc={{ backToTop: "Kembali ke atas", title: "Daftar Isi Halaman" }}
         >
           {children}
-          <Footer>MIT {new Date().getFullYear()} © Fyy's Notes.</Footer>
+          <Footer>{new Date().getFullYear()} © Fyy's Notebook.</Footer>
         </Layout>
 
       </body>
