@@ -1,0 +1,93 @@
+---
+title: Turunan (Derivatif)
+description: Pengertian turunan menggunakan limit delta x, aturan pangkat, dan contoh soal.
+---
+
+import { Callout } from 'nextra/components'
+import { Latex } from "@/components/latex"
+
+# 📉 Turunan (Derivatif)
+
+**Turunan** adalah pengukuran terhadap bagaimana nilai suatu fungsi berubah seiring perubahan nilai inputnya. Secara geometris, turunan merepresentasikan **kemiringan (gradien)** garis singgung pada suatu titik di kurva fungsi.
+
+## 💡 Konsep Dasar (Definisi Limit)
+
+Jika diketahui fungsi <Latex>{`f(x)`}</Latex>, maka turunannya didefinisikan sebagai limit dari perubahan rata-rata fungsi tersebut saat perubahannya mendekati nol.
+
+Kita menggunakan notasi <Latex>{`\\Delta x`}</Latex> (delta x) untuk melambangkan perubahan kecil pada variabel <Latex>{`x`}</Latex>.
+
+Rumus definisi turunan adalah:
+
+<Latex block>{`
+  f'(x) = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x) - f(x)}{\\Delta x}
+`}</Latex>
+
+**Penjelasan Rumus:**
+* <Latex>{`f(x + \\Delta x) - f(x)`}</Latex>: Selisih nilai fungsi (perubahan pada sumbu Y).
+* <Latex>{`\\Delta x`}</Latex>: Selisih nilai input (perubahan pada sumbu X).
+* <Latex>{`\\lim_{\\Delta x \\to 0}`}</Latex>: Kita mengambil jarak yang sangat kecil (hampir 0) agar mendapatkan kemiringan di satu titik tepat.
+
+---
+
+## 📜 Rumus-Rumus Dasar (Aturan Turunan)
+
+Menggunakan definisi limit setiap saat akan memakan waktu lama. Berikut adalah aturan praktis (rumus cepat) untuk mencari turunan fungsi aljabar:
+
+### 1. Turunan Konstanta
+Jika <Latex>{`f(x) = k`}</Latex> (angka saja), maka turunannya nol karena nilainya tidak pernah berubah.
+<Latex block>{`f'(x) = 0`}</Latex>
+
+### 2. Aturan Pangkat (Power Rule)
+Jika <Latex>{`f(x) = ax^n`}</Latex>, maka:
+
+<Latex block>{`f'(x) = n \\cdot a x^{n-1}`}</Latex>
+
+<Callout type="info" emoji="💡">
+  **Cara Cepat:** "Pangkat turun ke depan dikali koefisien, lalu pangkatnya dikurangi satu."
+</Callout>
+
+### 3. Sifat Penjumlahan & Pengurangan
+Turunan dari penjumlahan fungsi adalah jumlah dari turunannya.
+<Latex block>{`y' = u'(x) \\pm v'(x)`}</Latex>
+
+---
+
+## 📝 Contoh Soal & Pembahasan
+
+### Soal 1: Fungsi Pangkat
+Tentukan turunan pertama dari <Latex>{`f(x) = 4x^3`}</Latex>.
+
+**Penyelesaian:**
+<Latex block>{`
+  \\begin{aligned}
+  f'(x) &= 3 \\cdot 4 x^{3-1} \\\\
+  &= 12x^2
+  \\end{aligned}
+`}</Latex>
+
+### Soal 2: Polinomial
+Tentukan turunan dari <Latex>{`y = 2x^4 - 6x + 15`}</Latex>.
+
+**Penyelesaian:**
+Turunkan suku demi suku:
+1.  <Latex>{`2x^4 \\to 4 \\cdot 2x^3 = 8x^3`}</Latex>
+2.  <Latex>{`-6x \\to 1 \\cdot -6x^0 = -6`}</Latex>
+3.  <Latex>{`15 \\to 0`}</Latex> (Konstanta hilang)
+
+Hasil akhir:
+<Latex block>{`y' = 8x^3 - 6`}</Latex>
+
+### Soal 3: Menggunakan Definisi Limit (Opsional)
+Buktikan turunan <Latex>{`f(x) = x^2`}</Latex> adalah <Latex>{`2x`}</Latex> menggunakan rumus <Latex>{`\\Delta x`}</Latex>!
+
+**Penyelesaian:**
+<Latex block>{`
+  \\begin{aligned}
+  f'(x) &= \\lim_{\\Delta x \\to 0} \\frac{(x + \\Delta x)^2 - x^2}{\\Delta x} \\\\
+  &= \\lim_{\\Delta x \\to 0} \\frac{x^2 + 2x\\Delta x + (\\Delta x)^2 - x^2}{\\Delta x} \\\\
+  &= \\lim_{\\Delta x \\to 0} \\frac{2x\\Delta x + (\\Delta x)^2}{\\Delta x} \\\\
+  &= \\lim_{\\Delta x \\to 0} (2x + \\Delta x) \\\\
+  &= 2x + 0 \\\\
+  &= 2x
+  \\end{aligned}
+`}</Latex>
