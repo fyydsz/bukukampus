@@ -1,16 +1,16 @@
 const BAHASA_INDONESIA: Record<string, string> = {
-  sejarah_bahasa_indonesia: '',
-  kedudukan_fungsi: '',
-  diksi: '',
-  paragraf: '',
-  kalimat: '',
-  karangan: ''
-}
+  sejarah_bahasa_indonesia: "",
+  kedudukan_fungsi: "",
+  diksi: "",
+  paragraf: "",
+  kalimat: "",
+  karangan: "",
+};
 
 const LOGIKA_MATEMATIKA: Record<string, string> = {
-  proposisi: '',
-  tabel_kebenaran: ''
-}
+  proposisi: "",
+  tabel_kebenaran: "",
+};
 
 // const DASAR_PEMROGRAMAN_PYTHON: Record<string, string> = {
 //   instalasi: '',
@@ -18,42 +18,45 @@ const LOGIKA_MATEMATIKA: Record<string, string> = {
 // }
 
 const KALKULUS: Record<string, string> = {
-  pengenalan_kalkulus: '',
-  bilangan_kompleks: '',
-  modulus: '',
-  turunan: '',
-}
+  pengenalan_kalkulus: "",
+  bilangan_kompleks: "",
+  modulus: "",
+  turunan: "",
+};
 
-const DOCS_ITEMS: Record<string, any> = {
-  tentang: '',
+const DOCS_ITEMS: Record<
+  string,
+  string | { title: string; items: Record<string, string> }
+> = {
+  tentang: "",
   bahasa_indonesia: {
     title: "Bahasa Indonesia",
-    items: BAHASA_INDONESIA
+    items: BAHASA_INDONESIA,
   },
   logika_matematika: {
     title: "Logika Matematika",
-    items: LOGIKA_MATEMATIKA
+    items: LOGIKA_MATEMATIKA,
   },
   kalkulus: {
     title: "Kalkulus",
-    items: KALKULUS
+    items: KALKULUS,
   },
   // dasar_pemrograman_python: {
   //   title: "Dasar Pemrograman Python",
   //   items: DASAR_PEMROGRAMAN_PYTHON
   // }
-}
+};
 
-export default {
+const ROUTES = {
   index: {
     title: "Home",
     type: "page",
-
   },
   docs: {
     title: "Documentation",
     type: "page",
     items: DOCS_ITEMS,
   },
+};
 
-}
+export default ROUTES;
