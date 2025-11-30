@@ -1,23 +1,20 @@
 // scripts/gen-meta.js
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
 
 const rootDir = process.cwd();
-const metaFile = path.join(rootDir, 'git-meta.json');
+const metaFile = path.join(rootDir, "git-meta.json");
 
 // DEFINISI FOLDER KONTEN
-const contentDirs = [
-  'app/docs',
-  'content'
-];
+const contentDirs = ["app/docs", "content"];
 
 function getAllFiles(dirPath, arrayOfFiles = []) {
   if (!fs.existsSync(dirPath)) return arrayOfFiles;
-  
+
   const files = fs.readdirSync(dirPath);
 
-  files.forEach(function(file) {
+  files.forEach(function (file) {
     const fullPath = path.join(dirPath, file);
     if (fs.statSync(fullPath).isDirectory()) {
       getAllFiles(fullPath, arrayOfFiles);
@@ -36,11 +33,11 @@ try {
   const meta = {};
   let totalFiles = 0;
 
-  console.log('🔄 Generating git-meta.json...');
+  console.log("🔄 Generating git-meta.json...");
 
-  contentDirs.forEach(dir => {
+  contentDirs.forEach((dir) => {
     const absPath = path.join(rootDir, dir);
-    
+
     if (fs.existsSync(absPath)) {
       const files = getAllFiles(absPath);
       totalFiles += files.length;
@@ -48,16 +45,19 @@ try {
       files.forEach((file) => {
         // Buat path relatif dari root project untuk dijadikan KEY di JSON
         // .replace(/\\/g, '/') memaksa penggunaan forward slash agar konsisten di Windows/Linux
-        const relativePath = path.relative(rootDir, file).replace(/\\/g, '/');
-        
+        const relativePath = path.relative(rootDir, file).replace(/\\/g, "/");
+
         try {
           // Jalankan git log
           // Gunakan cwd: rootDir untuk memastikan git command berjalan di konteks yang benar
-          const lastCommitDate = execSync(`git log -1 --format=%cs "${relativePath}"`, {
-            cwd: rootDir,
-            encoding: 'utf8'
-          }).trim();
-          
+          const lastCommitDate = execSync(
+            `git log -1 --format=%cs "${relativePath}"`,
+            {
+              cwd: rootDir,
+              encoding: "utf8",
+            },
+          ).trim();
+
           if (lastCommitDate) {
             meta[relativePath] = lastCommitDate;
           }
@@ -72,12 +72,13 @@ try {
   });
 
   fs.writeFileSync(metaFile, JSON.stringify(meta, null, 2));
-  console.log(`✅ Success: Scanned ${totalFiles} files. Meta saved to git-meta.json`);
-
+  console.log(
+    `✅ Success: Scanned ${totalFiles} files. Meta saved to git-meta.json`,
+  );
 } catch (error) {
-  console.error('❌ Error generating meta:', error);
+  console.error("❌ Error generating meta:", error);
   // Pastikan file meta tetap ada meski kosong agar build tidak error
   if (!fs.existsSync(metaFile)) {
-    fs.writeFileSync(metaFile, '{}');
+    fs.writeFileSync(metaFile, "{}");
   }
 }
