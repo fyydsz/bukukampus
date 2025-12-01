@@ -189,4 +189,51 @@ html:not(.dark) {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+    /* Steps Indicator: Color and border styling for the number bubble
+       These mirror the expectations in stylesfromnextra/styles/steps.css so
+       Nextra's Steps numbering matches the global theme. */
+    .nextra-steps h2::before,
+    .nextra-steps h3:not([style^="visibility:"])::before,
+    .nextra-steps h4::before,
+    .nextra-steps h5::before,
+    .nextra-steps h6::before {
+        /* Light mode: subtle tint of primary (Stranger Things) */
+        background-color: hsla(
+            var(--nextra-primary-hue),
+            var(--nextra-primary-saturation),
+            var(--nextra-primary-lightness),
+            0.12
+        ) !important; /* primary hue tint */
+        color: hsl(
+            var(--nextra-primary-hue),
+            var(--nextra-primary-saturation),
+            var(--nextra-primary-lightness)
+        ) !important; /* primary as text */
+        border-width: 4px !important; /* keep width if used for layout */
+        border-style: solid !important;
+        border-color: transparent !important; /* hide the outer border */
+    }
+
+    /* Dark mode: subtle tint of primary (Upside Down) */
+    html.dark .nextra-steps h2::before,
+    html.dark .nextra-steps h3:not([style^="visibility:"])::before,
+    html.dark .nextra-steps h4::before,
+    html.dark .nextra-steps h5::before,
+    html.dark .nextra-steps h6::before {
+        background-color: hsla(
+            var(--nextra-primary-hue),
+            var(--nextra-primary-saturation),
+            var(--nextra-primary-lightness),
+            0.12
+        ) !important; /* primary hue tint */
+        color: hsl(
+            var(--nextra-primary-hue),
+            var(--nextra-primary-saturation),
+            var(--nextra-primary-lightness)
+        ) !important; /* primary as text */
+        border-width: 4px !important;
+        border-style: solid !important;
+        border-color: transparent !important; /* hide the outer border */
+    }
 }
