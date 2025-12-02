@@ -62,8 +62,8 @@ export const Footer: FC<ComponentProps<"footer">> = ({
                 Learn
               </a>
             </div>
-            <div>{children}</div>
           </div>
+          <div>{children}</div>
         </div>
       </footer>
     </div>
