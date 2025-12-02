@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
 
