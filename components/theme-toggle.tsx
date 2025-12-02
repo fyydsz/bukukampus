@@ -7,12 +7,22 @@ export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  // Biar theme ready dulu sebelum render icon
   useEffect(() => {
-    Promise.resolve().then(() => setMounted(true));
+    //eslint-disable-next-line
+    setMounted(true);
   }, []);
 
   if (!mounted) {
-    return <div className="w-8 h-8" />; // Placeholder untuk menghindari layout shift
+    // Render placeholder biar SSR & Client sama
+    return (
+      <button
+        className="p-2 rounded-md transition-colors focus:outline-none"
+        aria-label="Toggle Dark Mode"
+      >
+        <div className="w-5 h-5" />
+      </button>
+    );
   }
 
   return (
