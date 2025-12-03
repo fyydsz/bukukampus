@@ -11,12 +11,16 @@
   "app/docs/dasar_pemrograman_python/sintaks_dasar/page.mdx": "2025-12-01",
   "app/docs/kalkulus/bilangan_kompleks/page.mdx": "2025-11-29",
   "app/docs/kalkulus/modulus/page.mdx": "2025-11-29",
-  "app/docs/kalkulus/page.mdx": "2025-11-29",
+  "app/docs/kalkulus/page.mdx": "2025-12-02",
   "app/docs/kalkulus/pengenalan_kalkulus/page.mdx": "2025-11-29",
   "app/docs/kalkulus/turunan/page.mdx": "2025-12-01",
-  "app/docs/logika_matematika/page.mdx": "2025-11-29",
+  "app/docs/logika_matematika/ekuivalen_logis/page.mdx": "2025-12-03",
+  "app/docs/logika_matematika/hukum_logika/page.mdx": "2025-12-03",
+  "app/docs/logika_matematika/page.mdx": "2025-12-02",
+  "app/docs/logika_matematika/pembuktian_logika/page.mdx": "2025-12-03",
   "app/docs/logika_matematika/proposisi/page.mdx": "2025-11-29",
+  "app/docs/logika_matematika/proposisi_majemuk/page.mdx": "2025-12-03",
   "app/docs/logika_matematika/tabel_kebenaran/page.mdx": "2025-11-29",
   "app/docs/page.mdx": "2025-12-02",
-  "app/docs/tentang/page.mdx": "2025-11-29"
+  "app/docs/tentang/page.mdx": "2025-12-02"
 }
