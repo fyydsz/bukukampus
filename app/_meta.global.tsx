@@ -10,6 +10,10 @@ const BAHASA_INDONESIA: Record<string, string> = {
 const LOGIKA_MATEMATIKA: Record<string, string> = {
   proposisi: "",
   tabel_kebenaran: "",
+  ekuivalen_logis: "",
+  proposisi_majemuk: "",
+  hukum_logika: "",
+  pembuktian_logika: "",
 };
 
 const DASAR_PEMROGRAMAN_PYTHON: Record<string, string> = {
