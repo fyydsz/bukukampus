@@ -7,13 +7,12 @@ import { Callout } from 'nextra/components'
 import { Latex } from "@/components/latex"
 
 # 🧮 Ekuivalensi Logis (<Latex>\equiv</Latex>)
-
 **Ekuivalensi Logis** adalah kondisi di mana dua buah proposisi majemuk, meskipun memiliki susunan kata atau struktur (sintaksis) yang berbeda, menghasilkan **nilai kebenaran** yang identik pada setiap kemungkinan kasus.
 
 Kedua proposisi tersebut dikatakan memiliki **makna logis yang sama**.
 
 ## 💡 Konsep Dasar
-***
+Berikut adalah beberapa poin penting terkait Ekuivalensi Logis:
 
 ### Definisi & Notasi
 Dua proposisi, misalnya <Latex>P</Latex> dan <Latex>Q</Latex>, dinyatakan ekuivalen jika dan hanya jika kolom nilai kebenaran akhir pada tabel kebenaran mereka sama persis.
@@ -27,7 +26,6 @@ Ekuivalensi Logis disimbolkan dengan:
 </Callout>
 
 ## 📊 Membuktikan Ekuivalensi dengan Tabel Kebenaran
-***
 
 ### Contoh 1: Ekuivalensi Disjungsi  
 Buktikan bahwa <Latex>p \vee q</Latex> ekuivalen dengan <Latex>\neg(\neg p \wedge \neg q)</Latex>.
@@ -71,10 +69,3 @@ Dengan <Latex>A</Latex> = Bedu sekolah, <Latex>B</Latex> = Bedu pandai.
 | T | T | F | F | **T** | **T** |
 
 **Kesimpulan:** Kolom <Latex>\neg A \to \neg B</Latex> dan <Latex>B \to A</Latex> identik.
-
----
-
-## 📝 Latihan
-
-1. <Latex>A \leftrightarrow B \equiv (A \to B) \wedge (B \to A)</Latex>  
-2. <Latex>\neg A \leftrightarrow B \equiv (\neg A \vee B) \wedge (\neg B \vee A)</Latex>
