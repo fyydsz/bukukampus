@@ -3,15 +3,17 @@ title: Sintaks Dasar & Variabel
 description: Memahami aturan penulisan Python, variabel, dan tipe data dasar.
 ---
 
-import { Callout } from 'nextra/components'
+import { Callout } from "nextra/components";
+import { Code } from "@/components/code";
 
 # 📝 Sintaks Dasar & Variabel
+Sebelum mulai membuat program, kita perlu mengenal dulu **cara kerja dasar Python**. Mirip seperti belajar huruf sebelum belajar membaca.
 
-Sebelum membuat program yang rumit, kita harus paham dulu aturan main (tata bahasa) di Python.
+Python terkenal karena **mudah dibaca** dan sangat cocok untuk pemula. Yuk mulai pelan-pelan.
 
-## 1. Variabel
-
-Variabel itu ibarat **wadah** atau **kotak** untuk menyimpan data. Di Python, kita tidak perlu repot mendeklarasikan tipe datanya (seperti `int` atau `String` di bahasa lain). Python cukup pintar untuk mengetahuinya sendiri.
+## 1. Variabel — Tempat Menyimpan Data
+Variabel adalah **wadah** untuk menyimpan nilai.  
+Cara membuat variabel: **nama_variabel → `=` → nilai**.
 
 ```python filename="variabel.py"
 # Membuat variabel
@@ -25,66 +27,73 @@ print(nama)
 print(umur)
 ```
 
+Python langsung mengenali tipe datanya, jadi kamu **tidak perlu** menyebutkan tipe secara manual.
+
 ### Aturan Penamaan Variabel
-* ✅ Boleh pakai huruf, angka, dan underscore (`_`).
-* ✅ Harus diawali dengan **huruf** atau **underscore**.
-* ❌ **Tidak boleh** diawali dengan angka.
-* ❌ **Tidak boleh** pakai spasi (gunakan `_` sebagai pemisah).
-* ⚠️ Bersifat **Case-sensitive** (huruf besar/kecil dibedakan). `nama` beda dengan `Nama`.
+- ✅ Boleh mengandung huruf, angka, dan `_`
+- ✅ Harus diawali **huruf** atau **underscore**
+- ❌ Tidak boleh diawali angka  
+- ❌ Tidak boleh mengandung spasi  
+- ⚠️ Case-sensitive: `nama` ≠ `Nama`
 
----
+Contoh nama variabel bagus:
 
-## 2. Indentasi (PENTING!) 🚨
+```python
+nama_depan = "Raffi"
+totalBarang = 10
+_jumlah = 3
+```
 
-Ini yang membedakan Python dengan bahasa lain. Python menggunakan **spasi** (indentasi) untuk mengelompokkan blok kode, bukan kurung kurawal `{}`.
-
-Jika indentasi kamu salah, program akan **error**.
+## 2. Indentasi — Spasi yang Wajib Konsisten
+Python memakai **indentasi** (spasi/tab di awal baris) untuk menentukan blok kode.  
+Kalau spasinya salah → program error.
 
 ```python filename="indentasi.py"
 if 10 > 5:
-    # Baris ini menjorok ke dalam (biasanya 4 spasi atau 1 Tab)
-    print("Sepuluh lebih besar dari lima") 
+    # Baris ini menjorok ke dalam
+    print("Sepuluh lebih besar dari lima")
     print("Ini masih di dalam blok if")
 
-print("Ini di luar blok if") # Tidak menjorok
+print("Ini di luar blok if")  # Sudah kembali ke kiri
 ```
 
 <Callout type="warning" emoji="⚠️">
-  **IndentationError:** Jika kamu melihat pesan error ini, artinya ada spasi yang kurang pas atau tidak sejajar di kodemu.
+  Gunakan **satu gaya indentasi**: 4 spasi **atau** 1 tab.  
+  Jangan dicampur ya!
 </Callout>
 
----
-
-## 3. Komentar (Comments)
-
-Komentar adalah catatan untuk manusia (programmer) dan **tidak akan dijalankan** oleh komputer. Gunakan tanda pagar `#`.
+## 3. Komentar — Catatan untuk Manusia
+Komentar adalah teks yang **tidak dijalankan** oleh komputer.
 
 ```python filename="komentar.py"
 # Ini adalah komentar satu baris
-print("Kode ini jalan") # Ini komentar di ujung kode
+print("Kode ini jalan")  # Komentar di samping kode
 
 """
-Ini adalah komentar
-banyak baris (multi-line)
-biasanya untuk dokumentasi
+Ini komentar banyak baris.
+Biasanya dipakai untuk dokumentasi.
 """
 ```
 
----
-
 ## 4. Tipe Data Dasar
+Tipe data = jenis nilai di dalam variabel.
 
-Meskipun Python otomatis, kita tetap perlu tahu jenis data yang kita simpan.
+| Tipe Data            | Contoh               | Keterangan                           |
+| :------------------- | :------------------- | :----------------------------------- |
+| **String** (`str`)   | `"Halo"`, `'Python'` | Teks (harus dalam tanda kutip)       |
+| **Integer** (`int`)  | `10`, `-5`, `0`      | Bilangan bulat                       |
+| **Float** (`float`)  | `3.14`, `2.5`        | Bilangan desimal                     |
+| **Boolean** (`bool`) | `True`, `False`      | Nilai benar/salah                    |
 
-| Tipe Data | Contoh | Keterangan |
-| :--- | :--- | :--- |
-| **String** (`str`) | `"Halo"`, `'Python'` | Teks, diapit kutip satu atau dua. |
-| **Integer** (`int`) | `10`, `-5`, `0` | Bilangan bulat. |
-| **Float** (`float`) | `3.14`, `2.5` | Bilangan desimal (koma pakai titik). |
-| **Boolean** (`bool`) | `True`, `False` | Nilai kebenaran (Benar/Salah). |
+Contoh mengecek tipe data:
 
 ```python filename="cek_tipe.py"
 nilai = 100.5
-print(type(nilai)) 
+print(type(nilai))
 # Output: <class 'float'>
 ```
+
+<Callout type="info" emoji="💡">
+  Tips: Tidak perlu terburu-buru. Dasar seperti variabel, komentar, dan indentasi  
+  adalah pondasi penting sebelum naik ke materi seperti percabangan dan perulangan.
+</Callout>
