@@ -31,6 +31,7 @@ const KALKULUS: Record<string, string> = {
 
 const DOCS_ITEMS: Record<string, string | { items: Record<string, string> }> = {
   tentang: "",
+  kontribusi: "",
   bahasa_indonesia: {
     items: BAHASA_INDONESIA,
   },
