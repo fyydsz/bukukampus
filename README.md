@@ -29,7 +29,7 @@ Required: nodejs & pnpm
 
 1. **Clone repository**
    ```bash
-   git clone [https://github.com/fyydsz/webnotes.git](https://github.com/fyydsz/webnotes.git)
+   git clone https://github.com/fyydsz/webnotes.git
    cd webnotes
    ```
 2. Instal dependency menggunakan pnpm sebagai package manager.
