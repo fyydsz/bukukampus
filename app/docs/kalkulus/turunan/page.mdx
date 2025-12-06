@@ -72,7 +72,30 @@ Ubah dulu ke bentuk pangkat: <Latex>{`f(x) = x^{1/2} + x^{-2}`}</Latex>.
 
 ## 4. Aturan Lanjut (Advanced Rules)
 
-### D. Aturan Perkalian (Product Rule)
+### D. Aturan Rantai (Chain Rule)
+Digunakan untuk fungsi komposisi (fungsi di dalam fungsi), seperti <Latex>{`y = (u(x))^n`}</Latex>.
+
+<Latex block>{`
+  f'(x) = n \\cdot (u(x))^{n-1} \\cdot u'(x)
+`}</Latex>
+
+<Callout type="info" emoji="🔗">
+  **Konsep:** Turunkan fungsi luarnya (pangkat), lalu **kalikan** dengan turunan fungsi dalamnya.
+</Callout>
+
+**Contoh:** Tentukan turunan <Latex>{`y = (3x^2 - 5)^4`}</Latex>.
+* Fungsi dalam: <Latex>{`u = 3x^2 - 5 \\to u' = 6x`}</Latex>
+* Fungsi luar: <Latex>{`(\\dots)^4`}</Latex>
+
+<Latex block>{`
+  \\begin{aligned}
+  y' &= 4(3x^2 - 5)^{4-1} \\cdot (6x) \\\\
+  &= 24x(3x^2 - 5)^3
+  \\end{aligned}
+`}</Latex>
+
+
+### E. Aturan Perkalian (Product Rule)
 Digunakan jika <Latex>{`f(x)`}</Latex> adalah hasil kali dua fungsi, kita sebut saja fungsi **a** (depan) dan fungsi **b** (belakang).
 
 <Latex block>{`
@@ -95,7 +118,7 @@ Digunakan jika <Latex>{`f(x)`}</Latex> adalah hasil kali dua fungsi, kita sebut 
   \\end{aligned}
 `}</Latex>
 
-### E. Aturan Pembagian (Quotient Rule)
+### F. Aturan Pembagian (Quotient Rule)
 Digunakan jika <Latex>{`f(x)`}</Latex> adalah pembagian dua fungsi, kita sebut fungsi **a** (atas) dan fungsi **b** (bawah).
 
 <Latex block>{`
@@ -116,27 +139,5 @@ Digunakan jika <Latex>{`f(x)`}</Latex> adalah pembagian dua fungsi, kita sebut f
   y' &= \\frac{(2x)(x+1) - (x^2)(1)}{(x+1)^2} \\\\
   &= \\frac{2x^2 + 2x - x^2}{(x+1)^2} \\\\
   &= \\frac{x^2 + 2x}{(x+1)^2}
-  \\end{aligned}
-`}</Latex>
-
-### F. Aturan Rantai (Chain Rule)
-Digunakan untuk fungsi komposisi (fungsi di dalam fungsi), seperti <Latex>{`y = (u(x))^n`}</Latex>.
-
-<Latex block>{`
-  f'(x) = n \\cdot (u(x))^{n-1} \\cdot u'(x)
-`}</Latex>
-
-<Callout type="info" emoji="🔗">
-  **Konsep:** Turunkan fungsi luarnya (pangkat), lalu **kalikan** dengan turunan fungsi dalamnya.
-</Callout>
-
-**Contoh:** Tentukan turunan <Latex>{`y = (3x^2 - 5)^4`}</Latex>.
-* Fungsi dalam: <Latex>{`u = 3x^2 - 5 \\to u' = 6x`}</Latex>
-* Fungsi luar: <Latex>{`(\\dots)^4`}</Latex>
-
-<Latex block>{`
-  \\begin{aligned}
-  y' &= 4(3x^2 - 5)^{4-1} \\cdot (6x) \\\\
-  &= 24x(3x^2 - 5)^3
   \\end{aligned}
 `}</Latex>
