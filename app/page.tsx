@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Map } from "lucide-react";
 
 export default function Home() {
   return (
@@ -115,6 +116,22 @@ export default function Home() {
                 </svg>
               </span>
             </Link>
+
+            {/* Roadmap - Gradient Blue/Cyan */}
+            <a
+              href="https://github.com/users/fyydsz/projects/5/views/2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative h-12 px-8 rounded-full font-bold flex items-center justify-center transition-all duration-300 active:scale-95 bg-linear-to-r from-blue-600 to-cyan-500 text-white border-2 border-transparent shadow-[0_4px_14px_0_rgba(59,130,246,0.4)] hover:from-blue-500 hover:to-cyan-400 hover:shadow-[0_6px_20px_rgba(59,130,246,0.5)]"
+            >
+              <span className="relative z-10 flex items-center">
+                Roadmap
+                <Map
+                  className="ml-2 w-4.5 h-4.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                  strokeWidth={2.5}
+                />
+              </span>
+            </a>
           </div>
         </div>
       </main>
