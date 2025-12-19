@@ -53,6 +53,7 @@ const ROUTES = {
   index: {
     title: "Home",
     type: "page",
+    display: "hidden",
   },
   docs: {
     title: "Documentation",
@@ -63,6 +64,11 @@ const ROUTES = {
     title: "Support",
     type: "page",
     href: "https://saweria.co/fyyy",
+  },
+  roadmap: {
+    title: "Roadmap",
+    type: "page",
+    href: "https://github.com/users/fyydsz/projects/5/views/2",
   },
 };
 
