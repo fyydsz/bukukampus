@@ -32,6 +32,7 @@ const KALKULUS: Record<string, string> = {
   bilangan_kompleks: "",
   modulus: "",
   turunan: "",
+  integral: "",
 };
 
 const DOCS_ITEMS: Record<string, string | { items: Record<string, string> }> = {
