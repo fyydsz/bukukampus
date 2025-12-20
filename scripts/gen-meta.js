@@ -3,11 +3,18 @@ import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
 
+// rootDir is derived from process.cwd(), not user input, so it's safe from command injection
 const rootDir = process.cwd();
 const metaFile = path.join(rootDir, "git-meta.json");
 
 // DEFINISI FOLDER KONTEN
 const contentDirs = ["app/docs", "content"];
+
+// Only normalize paths on Windows where backslashes are used
+const isWindows = process.platform === "win32";
+const normalizePath = isWindows
+  ? (p) => p.replace(/\\/g, "/")
+  : (p) => p;
 
 function getAllFiles(dirPath, arrayOfFiles = []) {
   if (!fs.existsSync(dirPath)) return arrayOfFiles;
@@ -52,7 +59,7 @@ function getLastCommitDates(files) {
 
     // Create a Set of files we care about for O(1) lookup
     const fileSet = new Set(
-      files.map((f) => path.relative(rootDir, f).replace(/\\/g, "/")),
+      files.map((f) => normalizePath(path.relative(rootDir, f))),
     );
 
     // Parse git output: each commit shows date followed by changed files

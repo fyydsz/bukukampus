@@ -7,7 +7,9 @@ interface SnowfallWrapperProps {
 }
 
 // Helper to subscribe to reduced motion preference changes
+// Note: This function is only called on the client by useSyncExternalStore
 function subscribeToPrefersReducedMotion(callback: () => void) {
+  if (typeof window === "undefined") return () => {};
   const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   mediaQuery.addEventListener("change", callback);
   return () => mediaQuery.removeEventListener("change", callback);
@@ -17,7 +19,9 @@ function getServerSnapshot() {
   return false; // Default to no reduced motion on server
 }
 
+// Note: This function is only called on the client by useSyncExternalStore
 function getClientSnapshot() {
+  if (typeof window === "undefined") return false;
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
