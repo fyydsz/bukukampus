@@ -24,6 +24,7 @@
     "nextra-theme-docs": "^4.6.1",
     "react": "19.2.0",
     "react-dom": "19.2.0",
+    "react-snowfall": "^2.4.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
