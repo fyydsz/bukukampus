@@ -1,6 +1,10 @@
 {
   "name": "bukukampus",
-  "version": "0.2.3",
+  "author": {
+    "name": "Fyy"
+  },
+  "license": "CC BY-SA 4.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
