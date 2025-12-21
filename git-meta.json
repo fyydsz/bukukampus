@@ -1,10 +1,14 @@
 {
+  "app/docs/page.mdx": "2025-12-21",
+  "app/docs/mata_kuliah/bahasa_indonesia/page.mdx": "2025-12-21",
+  "app/docs/program_studi/general/page.mdx": "2025-12-21",
+  "app/docs/program_studi/sistem_informasi/page.mdx": "2025-12-21",
+  "app/docs/program_studi/teknik_informatika/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/diksi/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/ejaan_bahasa_indonesia/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/kalimat/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/karangan/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/kedudukan_fungsi/page.mdx": "2025-12-21",
-  "app/docs/mata_kuliah/bahasa_indonesia/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/paragraf/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/reproduksi_bacaan_notasi_ilmiah/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/bahasa_indonesia/sejarah_bahasa_indonesia/page.mdx": "2025-12-21",
@@ -28,10 +32,6 @@
   "app/docs/mata_kuliah/logika_matematika/proposisi/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/logika_matematika/proposisi_majemuk/page.mdx": "2025-12-21",
   "app/docs/mata_kuliah/logika_matematika/tabel_kebenaran/page.mdx": "2025-12-21",
-  "app/docs/program_studi/general/page.mdx": "2025-12-21",
-  "app/docs/program_studi/sistem_informasi/page.mdx": "2025-12-21",
-  "app/docs/program_studi/teknik_informatika/page.mdx": "2025-12-21",
-  "app/docs/page.mdx": "2025-12-21",
   "app/docs/kontribusi/page.mdx": "2025-12-19",
   "app/docs/tentang/page.mdx": "2025-12-05"
 }
