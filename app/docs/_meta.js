@@ -24,6 +24,9 @@ const routes = {
     title: "Sistem Informasi",
     type: "page",
   },
+  shared: {
+    display: "hidden",
+  },
 };
 
 export default routes;
