@@ -259,8 +259,14 @@ export default function NextraLayoutWrapper({
             `/docs/program_studi/${baseProdi}`,
           );
           if (!isActive) {
-            // Remove children for non-active courses
-            delete (transformed as Record<string, unknown>).children;
+            // Keep children but mark as collapsed for non-active courses
+            // This ensures Nextra recognizes it as a valid page for pagination
+            if (
+              Array.isArray((transformed as Record<string, unknown>).children)
+            ) {
+              // Keep the children but we can add collapsed state if needed
+              // For now, just keep them - Nextra needs this for proper pagination
+            }
           }
           // Ensure proper route and href
           const route = `/docs/program_studi/${baseProdi}/${courseName}`;
@@ -325,11 +331,12 @@ export default function NextraLayoutWrapper({
         );
       }
 
-      // Remove mata_kuliah from pageMap after processing to prevent pagination leak
+      // Remove mata_kuliah from pageMap after course nodes are spliced
+      // This prevents pagination from jumping to mata_kuliah/bahasa_indonesia
       const removeMataKuliahNode = (nodes: unknown): boolean => {
         if (!nodes || typeof nodes !== "object") return false;
         if (Array.isArray(nodes)) {
-          for (let i = 0; i < nodes.length; i++) {
+          for (let i = nodes.length - 1; i >= 0; i--) {
             const obj = nodes[i] as Record<string, unknown>;
             const name = (obj.name ?? "").toString();
             const route = (obj.route ?? "").toString().replace(/\/+$/, "");
@@ -337,6 +344,11 @@ export default function NextraLayoutWrapper({
             if (name === "mata_kuliah" || route === "/docs/mata_kuliah") {
               // Remove mata_kuliah node
               nodes.splice(i, 1);
+              if (process.env.NODE_ENV === "development") {
+                console.log(
+                  `[NextraLayoutWrapper] Removed mata_kuliah from pageMap after course processing`,
+                );
+              }
               return true;
             }
 
@@ -349,11 +361,6 @@ export default function NextraLayoutWrapper({
       };
 
       removeMataKuliahNode(cloned);
-      if (process.env.NODE_ENV === "development") {
-        console.log(
-          `[NextraLayoutWrapper] Inside course ${activeCourse} for prodi ${prodiName}, removed mata_kuliah from pageMap`,
-        );
-      }
 
       return cloned;
     }
@@ -455,6 +462,38 @@ export default function NextraLayoutWrapper({
         // ignore meta manipulation errors, keep UI stable
       }
 
+      // Remove mata_kuliah from pageMap for isProgramStudiPath to prevent pagination leak
+      if (isProgramStudiPath) {
+        const removeMataKuliahNode = (nodes: unknown): boolean => {
+          if (!nodes || typeof nodes !== "object") return false;
+          if (Array.isArray(nodes)) {
+            for (let i = nodes.length - 1; i >= 0; i--) {
+              const obj = nodes[i] as Record<string, unknown>;
+              const name = (obj.name ?? "").toString();
+              const route = (obj.route ?? "").toString().replace(/\/+$/, "");
+
+              if (name === "mata_kuliah" || route === "/docs/mata_kuliah") {
+                // Remove mata_kuliah node
+                nodes.splice(i, 1);
+                if (process.env.NODE_ENV === "development") {
+                  console.log(
+                    `[NextraLayoutWrapper] Removed mata_kuliah from pageMap for program_studi path`,
+                  );
+                }
+                return true;
+              }
+
+              if (Array.isArray(obj.children)) {
+                if (removeMataKuliahNode(obj.children)) return true;
+              }
+            }
+          }
+          return false;
+        };
+
+        removeMataKuliahNode(cloned);
+      }
+
       if (process.env.NODE_ENV === "development") {
         try {
           console.log(
@@ -466,70 +505,10 @@ export default function NextraLayoutWrapper({
         }
       }
 
-      // Remove mata_kuliah from pageMap after processing to prevent pagination leak
-      const removeMataKuliahNode = (nodes: unknown): boolean => {
-        if (!nodes || typeof nodes !== "object") return false;
-        if (Array.isArray(nodes)) {
-          for (let i = 0; i < nodes.length; i++) {
-            const obj = nodes[i] as Record<string, unknown>;
-            const name = (obj.name ?? "").toString();
-            const route = (obj.route ?? "").toString().replace(/\/+$/, "");
-
-            if (name === "mata_kuliah" || route === "/docs/mata_kuliah") {
-              // Remove mata_kuliah node
-              nodes.splice(i, 1);
-              return true;
-            }
-
-            if (Array.isArray(obj.children)) {
-              if (removeMataKuliahNode(obj.children)) return true;
-            }
-          }
-        }
-        return false;
-      };
-
-      removeMataKuliahNode(cloned);
-      if (process.env.NODE_ENV === "development") {
-        console.log(
-          "[NextraLayoutWrapper] Removed mata_kuliah from pageMap after cleanup",
-        );
-      }
-
       return cloned;
     }
 
     // Default: return the cloned map unchanged
-    // Remove mata_kuliah from pageMap for default paths too
-    const removeMataKuliahNode = (nodes: unknown): boolean => {
-      if (!nodes || typeof nodes !== "object") return false;
-      if (Array.isArray(nodes)) {
-        for (let i = 0; i < nodes.length; i++) {
-          const obj = nodes[i] as Record<string, unknown>;
-          const name = (obj.name ?? "").toString();
-          const route = (obj.route ?? "").toString().replace(/\/+$/, "");
-
-          if (name === "mata_kuliah" || route === "/docs/mata_kuliah") {
-            // Remove mata_kuliah node
-            nodes.splice(i, 1);
-            return true;
-          }
-
-          if (Array.isArray(obj.children)) {
-            if (removeMataKuliahNode(obj.children)) return true;
-          }
-        }
-      }
-      return false;
-    };
-
-    removeMataKuliahNode(cloned);
-    if (process.env.NODE_ENV === "development") {
-      console.log(
-        "[NextraLayoutWrapper] Removed mata_kuliah from pageMap (default path)",
-      );
-    }
-
     return cloned;
   }, [pageMap, pathname]);
 
