@@ -328,6 +328,29 @@ export default function NextraLayoutWrapper({
       return cloned;
     }
 
+    // Helper: remove mata_kuliah node from pageMap to prevent pagination to it
+    const removeMataKuliahNode = (nodes: unknown): boolean => {
+      if (!nodes || typeof nodes !== "object") return false;
+      if (Array.isArray(nodes)) {
+        for (let i = 0; i < nodes.length; i++) {
+          const obj = nodes[i] as Record<string, unknown>;
+          const name = (obj.name ?? "").toString();
+          const route = (obj.route ?? "").toString().replace(/\/+$/, "");
+
+          if (name === "mata_kuliah" || route === "/docs/mata_kuliah") {
+            // Remove mata_kuliah node
+            nodes.splice(i, 1);
+            return true;
+          }
+
+          if (Array.isArray(obj.children)) {
+            if (removeMataKuliahNode(obj.children)) return true;
+          }
+        }
+      }
+      return false;
+    };
+
     // Behavior:
     // - On docs-like pages (/docs, /docs/tentang, /docs/kontribusi): keep program_studi as a folder,
     //   but ensure its immediate children (general, sistem_informasi, teknik_informatika) have no grandchildren.
@@ -423,6 +446,17 @@ export default function NextraLayoutWrapper({
         }
       } catch {
         // ignore meta manipulation errors, keep UI stable
+      }
+
+      // Remove mata_kuliah from pageMap when on program_studi pages
+      // This prevents "Next" pagination from going to mata_kuliah/bahasa_indonesia
+      if (isProgramStudiPath) {
+        removeMataKuliahNode(cloned);
+        if (process.env.NODE_ENV === "development") {
+          console.log(
+            "[NextraLayoutWrapper] Removed mata_kuliah from pageMap to prevent pagination leak",
+          );
+        }
       }
 
       if (process.env.NODE_ENV === "development") {
