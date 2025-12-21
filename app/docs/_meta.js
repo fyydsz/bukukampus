@@ -8,21 +8,18 @@ const routes = {
   kontribusi: {
     title: "",
   },
-  "#separator_materi": {
+  "#separator_course": {
+    title: "Mata Kuliah",
     type: "separator",
-    title: "Materi Pembelajaran",
   },
-  general: {
-    title: "General",
-    type: "page",
+  program_studi: {
+    title: "",
+    theme: {
+      collapsed: false,
+    },
   },
-  teknik_informatika: {
-    title: "Teknik Informatika",
-    type: "page",
-  },
-  sistem_informasi: {
-    title: "Sistem Informasi",
-    type: "page",
+  mata_kuliah: {
+    display: "hidden",
   },
 };
 
