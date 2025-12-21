@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 const prodiTitles: Record<string, string> = {
   sistem_informasi: "Sistem Informasi",
   teknik_informatika: "Teknik Informatika",
-  general: "General",
+  general: "Umum",
 };
 
 export default function BreadcrumbFixer() {
