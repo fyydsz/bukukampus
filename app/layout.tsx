@@ -3,13 +3,13 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 import { Navbar } from "nextra-theme-docs";
-import NextraLayoutWrapper from "@/components/NextraLayoutWrapper";
-import { Footer } from "./_components/footer/footer";
+import NextraLayoutWrapper from "../components/nextra-layout-wrapper";
+import { Footer } from "../components/page/footer/footer";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { connection } from "next/server";
 import SnowfallWrapper from "@/components/snowfall";
-import BreadcrumbFixer from "@/components/BreadcrumbFixer";
 
 // --- Konfigurasi Font (Dari Landing Page) ---
 const geistSans = Geist({
@@ -140,45 +140,46 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await connection();
+  const pageMap = await getPageMap();
   return (
     <html lang="id" dir="ltr" suppressHydrationWarning>
       <Head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <BreadcrumbFixer />
-        <SnowfallWrapper>
-          <NextraLayoutWrapper
-            banner={
-              <Banner storageKey="support-campaign-01" dismissible={true}>
-                <span className="font-bold">Suka dengan catatan ini?</span>
-                <a
-                  href="https://saweria.co/fyyy"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="ml-1 underline"
-                >
-                  Dukung Fyy di sini
-                </a>
-                <span className="ml-1">🎁</span>
-              </Banner>
-            }
-            navbar={navbar}
-            pageMap={await getPageMap("/")}
-            docsRepositoryBase="https://github.com/fyydsz/bukukampus/tree/master"
-            copyPageButton={false}
-            sidebar={{ toggleButton: true, defaultMenuCollapseLevel: 1 }}
-            feedback={{
-              content: "Beri kami saran atau masukan",
-              labels: "feedback",
-            }}
-            editLink={"Edit halaman ini di Github"}
-            toc={{ backToTop: "Kembali ke atas", title: "Daftar Isi Halaman" }}
-          >
-            {children}
-            <Footer>{new Date().getFullYear()} © Buku Kampus.</Footer>
-          </NextraLayoutWrapper>
-        </SnowfallWrapper>
+        {/*<SnowfallWrapper>*/}
+        <NextraLayoutWrapper
+          banner={
+            <Banner storageKey="support-campaign-01" dismissible={true}>
+              <span className="font-bold">Suka dengan catatan ini?</span>
+              <a
+                href="https://saweria.co/fyyy"
+                target="_blank"
+                rel="noreferrer"
+                className="ml-1 underline"
+              >
+                Dukung Fyy di sini
+              </a>
+              <span className="ml-1">🎁</span>
+            </Banner>
+          }
+          navbar={navbar}
+          pageMap={pageMap}
+          docsRepositoryBase="https://github.com/fyydsz/bukukampus/tree/master"
+          copyPageButton={false}
+          sidebar={{ toggleButton: true, defaultMenuCollapseLevel: 1 }}
+          feedback={{
+            content: "Beri kami saran atau masukan",
+            labels: "feedback",
+          }}
+          editLink={"Edit halaman ini di Github"}
+          toc={{ backToTop: "Kembali ke atas", title: "Daftar Isi Halaman" }}
+        >
+          {children}
+          <Footer>{new Date().getFullYear()} © Buku Kampus.</Footer>
+        </NextraLayoutWrapper>
+        {/*</SnowfallWrapper>*/}
       </body>
     </html>
   );
