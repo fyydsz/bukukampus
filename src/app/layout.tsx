@@ -1,5 +1,4 @@
 import { RootProvider } from 'fumadocs-ui/provider/next';
-//@ts-expect-error -- global css import
 import './global.css';
 import { Inter } from 'next/font/google';
 import { Banner } from 'fumadocs-ui/components/banner';
