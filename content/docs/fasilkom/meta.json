@@ -1,0 +1,12 @@
+{ 
+  "title": "Fasilkom",
+  "description": "Fakultas Ilmu Komputer",
+  "icon": "Laptop",
+  "root": true,
+  "pages": [
+    "index",
+    "program-studi",
+    "---Course List---",
+    "..."
+  ]
+}
