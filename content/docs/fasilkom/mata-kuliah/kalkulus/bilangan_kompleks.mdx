@@ -1,0 +1,214 @@
+---
+title:  Bilangan Kompleks
+description: Konsep dasar, notasi, operasi perkalian, pembagian, dan konjugat bilangan kompleks dalam kalkulus.
+program_studi: [teknik_informatika, sistem_informasi, sistem_komputer]
+icon: BookText
+---
+
+**Bilangan Kompleks** adalah perluasan dari sistem bilangan riil yang memungkinkan kita bekerja dengan akar kuadrat dari bilangan negatif. Bilangan ini merupakan gabungan antara unsur **Riil** dan **Imajiner**.
+
+## 1. Definisi dan Notasi
+
+### 1.1 Bentuk Standar
+
+Bilangan kompleks biasanya dinotasikan dengan huruf $z$ dan ditulis dalam bentuk standar: 
+
+```math
+z = a + bi
+```
+
+**Keterangan:**
+
+| Komponen | Penjelasan | Notasi |
+|----------|------------|--------|
+| $a$ | Bagian Riil | $Re(z)$ |
+| $b$ | Bagian Imajiner | $Im(z)$ |
+| $i$ | Satuan imajiner | $i = \sqrt{-1}$ atau $i^2 = -1$ |
+
+### 1.2 Contoh Identifikasi
+
+Berikut adalah contoh identifikasi bagian riil dan imajiner:
+
+| Bilangan Kompleks | Bagian Riil | Bagian Imajiner |
+|-------------------|-------------|-----------------|
+| $z_1 = 3 + 2i$ | 3 | 2 |
+| $z_2 = 4 - 6i$ | 4 | -6 |
+| $z_3 = -2 + 5i$ | -2 | 5 |
+| $z_4 = 7i$ | 0 | 7 |
+
+---
+
+## 2. Operasi Perkalian
+
+### 2.1 Perkalian Bilangan Imajiner
+
+Perkalian bilangan imajiner mengikuti aturan aljabar biasa dengan substitusi $i^2 = -1$.
+
+**Contoh:** Hitunglah hasil dari $2i \cdot 3i$! 
+
+**Penyelesaian:**
+
+```math
+\begin{aligned}
+  2i \cdot 3i &= (2 \cdot 3) \cdot (i \cdot i) \\
+  &= 6 \cdot i^2 \\
+  &= 6 \cdot (-1) \\
+  &= -6
+  \end{aligned}
+```
+
+<Callout type="info" emoji="ℹ️">
+  **Unik!** Hasil perkalian dua bilangan imajiner murni bisa menghasilkan bilangan riil. 
+</Callout>
+
+### 2.2 Perkalian Dua Bilangan Kompleks
+
+**Contoh:** Hitunglah $(2 + 3i)(4 - 5i)$!
+
+**Penyelesaian:**
+
+```math
+\begin{aligned}
+  (2 + 3i)(4 - 5i) &= 2(4) + 2(-5i) + 3i(4) + 3i(-5i) \\
+  &= 8 - 10i + 12i - 15i^2 \\
+  &= 8 + 2i - 15(-1) \\
+  &= 8 + 2i + 15 \\
+  &= 23 + 2i
+  \end{aligned}
+```
+
+---
+
+## 3. Pembagian Bilangan Kompleks
+
+### 3.1 Masalah Pembagian
+
+Untuk melakukan pembagian pada bilangan kompleks, kita tidak bisa membaginya secara langsung seperti bilangan biasa. Kita harus menggunakan bantuan **Konjugat** (Sekawan) dari penyebutnya.
+
+### 3.2 Konjugat ($\bar{z}$)
+
+**Definisi:** Konjugat dari sebuah bilangan kompleks $z = a + bi$ adalah bilangan yang memiliki bagian imajiner dengan tanda yang berlawanan. 
+
+```math
+\text{Jika } z = a + bi \quad \longrightarrow \quad \bar{z} = a - bi
+```
+
+**Contoh Konjugat:**
+
+| Bilangan ($z$) | Konjugat ($\bar{z}$) |
+|--------------------------------|--------------------------------------|
+| $2 + i$ | $2 - i$ |
+| $3 - 2i$ | $3 + 2i$ |
+| $-4 + 7i$ | $-4 - 7i$ |
+| $5i$ | $-5i$ |
+
+### 3.3 Rumus Pembagian
+
+Prinsipnya adalah mengalikan pembilang dan penyebut dengan **konjugat dari penyebut**. 
+
+```math
+\frac{z_1}{z_2} = \frac{a + bi}{c + di} \cdot \frac{c - di}{c - di}
+```
+
+<Callout type="warning" emoji="⚠️">
+  **Ingat!** Identitas penting: $(c + di)(c - di) = c^2 + d^2$ <br/>
+  Hasil perkalian bilangan kompleks dengan konjugatnya selalu menghasilkan bilangan real! 
+</Callout>
+
+---
+
+## 4. Contoh Soal dan Pembahasan
+
+### Soal 1: Pembagian Standar
+
+Diketahui $z_1 = 5 + 4i$ dan $z_2 = 3 - 2i$. Tentukan hasil pembagiannya!
+
+**Penyelesaian:**
+
+**Langkah 1:** Identifikasi konjugat penyebut → $\bar{z_2} = 3 + 2i$
+
+**Langkah 2:** Kalikan pembilang dan penyebut dengan konjugat penyebut: 
+
+```math
+\begin{aligned}
+  \frac{z_1}{z_2} &= \frac{5+4i}{3-2i} \cdot \frac{3+2i}{3+2i} \\[10pt]
+  &= \frac{(5+4i)(3+2i)}{(3-2i)(3+2i)} \\[10pt]
+  &= \frac{15 + 10i + 12i + 8i^2}{3^2 + 2^2} \\[10pt]
+  &= \frac{15 + 22i + 8(-1)}{9 + 4} \\[10pt]
+  &= \frac{15 - 8 + 22i}{13} \\[10pt]
+  &= \frac{7 + 22i}{13} \\[10pt]
+  &= \frac{7}{13} + \frac{22}{13}i
+  \end{aligned}
+```
+
+---
+
+### Soal 2: Penyebut dengan Akar Negatif
+
+Diketahui $z_1 = 2 + i$ dan $z_2 = 1 - \sqrt{-4}$. Tentukan $\frac{z_1}{z_2}$! 
+
+**Penyelesaian:**
+
+**Langkah 1:** Sederhanakan $z_2$ terlebih dahulu: 
+
+```math
+z_2 = 1 - \sqrt{-4} = 1 - \sqrt{4 \cdot (-1)} = 1 - 2i
+```
+
+**Langkah 2:** Identifikasi konjugat penyebut → $\bar{z_2} = 1 + 2i$
+
+**Langkah 3:** Lakukan pembagian: 
+
+```math
+\begin{aligned}
+  \frac{z_1}{z_2} &= \frac{2+i}{1-2i} \cdot \frac{1+2i}{1+2i} \\[10pt]
+  &= \frac{(2+i)(1+2i)}{(1-2i)(1+2i)} \\[10pt]
+  &= \frac{2 + 4i + i + 2i^2}{1 + 4} \\[10pt]
+  &= \frac{2 + 5i + 2(-1)}{5} \\[10pt]
+  &= \frac{2 - 2 + 5i}{5} \\[10pt]
+  &= \frac{5i}{5} \\[10pt]
+  &= i
+  \end{aligned}
+```
+
+---
+
+### Soal 3: Kasus Khusus (Penyebut Imajiner Murni)
+
+Tentukan hasil dari $\frac{5}{i}$!
+
+**Penyelesaian:**
+
+Kita bisa menganggap penyebutnya sebagai $0 + i$, maka konjugatnya adalah $0 - i = -i$. 
+
+```math
+\begin{aligned}
+  \frac{5}{i} &= \frac{5}{i} \cdot \frac{-i}{-i} \\[10pt]
+  &= \frac{-5i}{-i^2} \\[10pt]
+  &= \frac{-5i}{-(-1)} \\[10pt]
+  &= \frac{-5i}{1} \\[10pt]
+  &= -5i
+  \end{aligned}
+```
+
+---
+
+## 5. Ringkasan
+
+### Rumus-Rumus Penting
+
+| Operasi | Rumus |
+|---------|-------|
+| Konjugat | $\overline{a+bi} = a-bi$ |
+| Perkalian dengan Konjugat | $(a+bi)(a-bi) = a^2 + b^2$ |
+| Pembagian | $\frac{a+bi}{c+di} = \frac{(a+bi)(c-di)}{c^2+d^2}$ |
+
+---
+
+## 💡 Tips Mengerjakan Soal
+
+> **Selalu sederhanakan terlebih dahulu!** Jika ada akar negatif seperti $\sqrt{-4}$, ubah menjadi bentuk imajiner $2i$.
+
+> **Gunakan konjugat untuk pembagian!** Kalikan pembilang dan penyebut dengan konjugat penyebut untuk menghilangkan bilangan imajiner di penyebut.
+
+> **Ingat:  $i^2 = -1$!** Ini adalah kunci utama dalam menyederhanakan perhitungan bilangan kompleks.

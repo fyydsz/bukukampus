@@ -1,0 +1,403 @@
+---
+title:  Integral (Antiturunan)
+description: Pengertian integral, integral tak tentu, integral tentu, aturan pangkat, dan teknik substitusi dasar.
+program_studi: [teknik_informatika, sistem_informasi, sistem_komputer]
+icon: BookText
+---
+
+**Integral** secara umum dikenal sebagai kebalikan (invers) dari turunan. Jika turunan menurunkan pangkat, maka integral "menaikkan" pangkat.  Integral memiliki banyak aplikasi penting, seperti menghitung luas daerah di bawah kurva.
+
+## 1. Pengertian dan Jenis Integral
+
+### 1.1 Integral Tak Tentu
+
+Integral tak tentu adalah operasi kebalikan dari turunan, menghasilkan fungsi dengan konstanta integrasi $C$.
+
+```math
+\int f(x) \, dx = F(x) + C
+```
+
+<Callout type="info" emoji="❓">
+  **Mengapa ada konstanta C?** Karena turunan dari konstanta adalah 0, maka saat kita "membalik" proses turunan, kita tidak tahu konstanta aslinya. Contoh: turunan dari $x^2 + 5$ dan $x^2 + 100$ sama-sama $2x$.
+</Callout>
+
+### 1.2 Integral Tentu
+
+Integral tentu menghitung nilai numerik (luas) dengan batas atas dan batas bawah tertentu.
+
+```math
+\int_{a}^{b} f(x) \, dx = F(b) - F(a)
+```
+
+Dimana:
+- $a$ = batas bawah
+- $b$ = batas atas
+- $F(x)$ = antiturunan dari $f(x)$
+
+---
+
+## 2. Rumus Dasar
+
+### 2.1 Aturan Pangkat (Power Rule)
+
+```math
+\int ax^n \, dx = a \cdot \frac{1}{n+1}x^{n+1} + C \quad \text{(untuk } n \neq -1 \text{)}
+```
+
+<Callout type="info" emoji="💡">
+  **Cara Cepat:** "Pangkat ditambah satu, lalu koefisien dibagi dengan pangkat yang baru."
+</Callout>
+
+### 2.2 Tabel Rumus Penting
+
+| Fungsi | Integral |
+|--------|----------|
+| $\int k \, dx$ | $kx + C$ |
+| $\int x^n \, dx$ | $\frac{1}{n+1}x^{n+1} + C$ |
+| $\int \frac{1}{x} \, dx$ | $\ln \vert x \vert + C$ |
+| $\int (f \pm g) \, dx$ | $\int f \, dx \pm \int g \, dx$ |
+
+---
+
+## 3. Contoh Soal Integral Tak Tentu
+
+### Soal 1: Integral Konstanta
+
+**Soal:** Tentukan hasil dari $\int 4 \, dx$.
+
+**Penyelesaian:**
+
+Anggap $4 = 4x^0$, lalu gunakan aturan pangkat:
+
+```math
+\begin{aligned}
+\int 4 \, dx &= \int 4x^0 \, dx \\[8pt]
+&= 4 \cdot \frac{x^{0+1}}{0+1} + C \\[8pt]
+&= 4 \cdot \frac{1}{1}x^1 + C \\[8pt]
+&= 4x + C
+\end{aligned}
+```
+
+---
+
+### Soal 2: Integral Bentuk Pecahan
+
+**Soal:** Tentukan hasil dari $\int \frac{2}{x^2} \, dx$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Ubah ke bentuk pangkat negatif
+
+```math
+\frac{2}{x^2} = 2x^{-2}
+```
+
+**Langkah 2:** Integralkan
+
+```math
+\begin{aligned}
+\int 2x^{-2} \, dx &= 2 \cdot \frac{x^{-2+1}}{-2+1} + C \\[8pt]
+&= 2 \cdot \frac{1}{-1}x^{-1} + C \\[8pt]
+&= -2x^{-1} + C \\[8pt]
+&= -\frac{2}{x} + C
+\end{aligned}
+```
+
+---
+
+### Soal 3: Perkalian Polinomial (Selisih Kuadrat)
+
+**Soal:** Tentukan hasil dari $\int (x-3)(x+3) \, dx$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Gunakan rumus selisih kuadrat $(a-b)(a+b) = a^2 - b^2$
+
+```math
+(x-3)(x+3) = x^2 - 9
+```
+
+**Langkah 2:** Integralkan
+
+```math
+\begin{aligned}
+\int (x^2 - 9) \, dx &= \frac{1}{2+1}x^{2+1} - 9x + C \\[8pt]
+&= \frac{x^3}{3} - 9x + C
+\end{aligned}
+```
+
+---
+
+### Soal 4: Polinomial Campuran
+
+**Soal:** Tentukan hasil dari $\int (3x^2 - 4x + 5) \, dx$.
+
+**Penyelesaian:**
+
+Integralkan setiap suku secara terpisah: 
+
+| Suku | Proses | Hasil |
+|------|--------|-------|
+| $3x^2$ | $3 \cdot \frac{1}{3}x^3$ | $x^3$ |
+| $-4x$ | $-4 \cdot \frac{1}{2}x^2$ | $-2x^2$ |
+| $5$ | $5x$ | $5x$ |
+
+**Hasil Akhir:** $x^3 - 2x^2 + 5x + C$
+
+---
+
+### Soal 5: Perkalian Polinomial Lanjut
+
+**Soal:** Tentukan hasil dari $\int (4x^2 - 3x)(5x + 7) \, dx$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Kalikan kedua kurung (distribusi)
+
+```math
+\begin{aligned}
+(4x^2 - 3x)(5x + 7) &= 4x^2(5x) + 4x^2(7) - 3x(5x) - 3x(7) \\[8pt]
+&= 20x^3 + 28x^2 - 15x^2 - 21x \\[8pt]
+&= 20x^3 + 13x^2 - 21x
+\end{aligned}
+```
+
+**Langkah 2:** Integralkan setiap suku
+
+```math
+\begin{aligned}
+\int (20x^3 + 13x^2 - 21x) \, dx &= 20 \cdot \frac{1}{4}x^4 + 13 \cdot \frac{1}{3}x^3 - 21 \cdot \frac{1}{2}x^2 + C \\[8pt]
+&= 5x^4 + \frac{13}{3}x^3 - \frac{21}{2}x^2 + C
+\end{aligned}
+```
+
+---
+
+### Soal 6: Pangkat Pecahan
+
+**Soal:** Tentukan hasil dari $\int \frac{3}{7}x^{6/9} \, dx$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Sederhanakan pangkat pecahan
+
+```math
+\frac{6}{9} = \frac{2}{3}
+```
+
+**Langkah 2:** Hitung $n + 1$
+
+```math
+n + 1 = \frac{2}{3} + 1 = \frac{2}{3} + \frac{3}{3} = \frac{5}{3}
+```
+
+**Langkah 3:** Integralkan
+
+```math
+\begin{aligned}
+\int \frac{3}{7}x^{2/3} \, dx &= \frac{3}{7} \cdot \frac{1}{5/3}x^{5/3} + C \\[8pt]
+&= \frac{3}{7} \cdot \frac{3}{5} x^{5/3} + C \\[8pt]
+&= \frac{9}{35} x^{5/3} + C
+\end{aligned}
+```
+
+**Bentuk Akar:** $\frac{9}{35} \sqrt[3]{x^5} + C$
+
+---
+
+### Soal 7: Pembagian Variabel (Pangkat Negatif)
+
+**Soal:** Tentukan hasil dari
+
+```math
+\int \frac{7x^3}{6x^{10}} \, dx
+```
+
+**Penyelesaian:**
+
+**Langkah 1:** Sederhanakan menggunakan aturan eksponen $\frac{x^a}{x^b} = x^{a-b}$
+
+```math
+\frac{7x^3}{6x^{10}} = \frac{7}{6} x^{3-10} = \frac{7}{6} x^{-7}
+```
+
+**Langkah 2:** Integralkan dengan $n + 1 = -7 + 1 = -6$
+
+```math
+\begin{aligned}
+\int \frac{7}{6} x^{-7} \, dx &= \frac{7}{6} \cdot \frac{1}{-6}x^{-6} + C \\[8pt]
+&= -\frac{7}{36} x^{-6} + C \\[8pt]
+&= -\frac{7}{36x^6} + C
+\end{aligned}
+```
+
+---
+
+### Soal 8: Perkalian dan Pembagian Polinomial
+
+**Soal:** Tentukan hasil dari
+
+```math
+\int \frac{(3x^2 - 8)(3x^2 + 8)}{12x^4} \, dx
+```
+
+**Penyelesaian:**
+
+**Langkah 1:** Jabarkan pembilang dengan selisih kuadrat
+
+```math
+\begin{aligned}
+(3x^2 - 8)(3x^2 + 8) &= (3x^2)^2 - 8^2 \\[8pt]
+&= 9x^4 - 64
+\end{aligned}
+```
+
+<Callout type="info" emoji="💡">
+  **Ingat Bentuk Selisih Kuadrat:**
+  Gunakan identitas aljabar $(a-b)(a+b) = a^2 - b^2$ untuk menyederhanakan pembilang dengan cepat.
+  Dalam soal ini, $a = 3x^2$ dan $b = 8$.
+</Callout>
+
+**Langkah 2:** Bagi setiap suku dengan penyebut
+
+```math
+\begin{aligned}
+\frac{9x^4 - 64}{12x^4} &= \frac{9x^4}{12x^4} - \frac{64}{12x^4} \\[8pt]
+&= \frac{3}{4} - \frac{16}{3}x^{-4}
+\end{aligned}
+```
+
+**Langkah 3:** Integralkan setiap suku
+
+```math
+\begin{aligned}
+\int \left( \frac{3}{4} - \frac{16}{3}x^{-4} \right) dx &= \frac{3}{4}x - \frac{16}{3} \cdot \frac{1}{-3}x^{-3} + C \\[8pt]
+&= \frac{3}{4}x + \frac{16}{9}x^{-3} + C \\[8pt]
+&= \frac{3}{4}x + \frac{16}{9x^3} + C
+\end{aligned}
+```
+
+---
+
+## 4. Integral Tentu
+
+### 4.1 Konsep Dasar
+
+Integral tentu memiliki batas atas dan batas bawah, sehingga menghasilkan nilai numerik (bukan fungsi).
+
+```math
+\int_{a}^{b} f(x) \, dx = [F(x)]_{a}^{b} = F(b) - F(a)
+```
+
+<Callout type="warning" emoji="⚠️">
+  **Perhatian!** Pada integral tentu, konstanta $C$ tidak perlu ditulis karena akan saling menghilangkan saat substitusi batas.
+</Callout>
+
+### 4.2 Contoh Soal
+
+**Soal:** Hitung nilai dari $\int_{1}^{2} 4x^3 \, dx$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Integralkan fungsi
+
+```math
+\int 4x^3 \, dx = 4 \cdot \frac{1}{4}x^4 = x^4
+```
+
+**Langkah 2:** Substitusi batas atas dan batas bawah
+
+```math
+\begin{aligned}
+[x^4]_{1}^{2} &= (2)^4 - (1)^4 \\[8pt]
+&= 16 - 1 \\[8pt]
+&= 15
+\end{aligned}
+```
+
+---
+
+## 5. Teknik Substitusi
+
+### 5.1 Kapan Menggunakan Substitusi? 
+
+Teknik substitusi digunakan jika terdapat **fungsi di dalam fungsi** (komposisi) yang tidak bisa langsung diintegralkan dengan aturan pangkat biasa.
+
+### 5.2 Langkah-Langkah Substitusi
+
+1.  Identifikasi bagian dalam fungsi, misalkan sebagai $u$
+2. Hitung $\frac{du}{dx}$, lalu nyatakan $dx$ dalam $du$
+3. Substitusi semua variabel $x$ menjadi $u$
+4. Integralkan dalam variabel $u$
+5. Kembalikan ke variabel $x$
+
+### 5.3 Contoh Soal
+
+**Soal:** Tentukan hasil dari $\int (2x+3)^5 \, dx$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Misalkan fungsi dalam
+
+```math
+u = 2x + 3
+```
+
+**Langkah 2:** Turunkan untuk mendapatkan $du$
+
+```math
+\frac{du}{dx} = 2 \quad \Rightarrow \quad dx = \frac{du}{2}
+```
+
+**Langkah 3:** Substitusi ke integral
+
+```math
+\int (2x+3)^5 \, dx = \int u^5 \cdot \frac{du}{2} = \frac{1}{2} \int u^5 \, du
+```
+
+**Langkah 4:** Integralkan
+
+```math
+\begin{aligned}
+\frac{1}{2} \int u^5 \, du &= \frac{1}{2} \cdot \frac{1}{6}u^6 + C \\[8pt]
+&= \frac{u^6}{12} + C
+\end{aligned}
+```
+
+**Langkah 5:** Kembalikan ke variabel $x$
+
+```math
+= \frac{(2x+3)^6}{12} + C
+```
+
+---
+
+## 6. Ringkasan
+
+### 6.1 Perbandingan Turunan dan Integral
+
+| Turunan | Integral |
+|---------|----------|
+| $x^n \to nx^{n-1}$ | $x^n \to \frac{1}{n+1}x^{n+1}$ |
+| Pangkat turun, dikali pangkat lama | Pangkat naik, dibagi pangkat baru |
+| Tidak ada konstanta | Ada konstanta $C$ |
+
+### 6.2 Checklist Sebelum Mengintegralkan
+
+✅ Sederhanakan fungsi terlebih dahulu (jabarkan perkalian, bagi pecahan)
+
+✅ Ubah akar dan pecahan ke bentuk pangkat
+
+✅ Periksa apakah perlu menggunakan teknik substitusi
+
+✅ Jangan lupa konstanta $C$ untuk integral tak tentu
+
+---
+
+## 💡 Tips Mengerjakan Soal
+
+> **Sederhanakan dulu!** Selalu jabarkan perkalian polinomial dan sederhanakan pecahan sebelum mengintegralkan. 
+
+> **Ubah ke bentuk pangkat!** Akar ($\sqrt{x} = x^{1/2}$) dan pecahan ($\frac{1}{x^2} = x^{-2}$) harus diubah ke bentuk pangkat.
+
+> **Hati-hati dengan tanda negatif!** Terutama saat pangkat negatif ditambah 1, hasilnya tetap negatif (misal: $-7 + 1 = -6$).

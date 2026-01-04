@@ -1,0 +1,231 @@
+---
+title: Turunan (Derivatif)
+description: Pengertian turunan, definisi limit, aturan pangkat, aturan rantai, perkalian, dan pembagian.
+program_studi: [teknik_informatika, sistem_informasi, sistem_komputer]
+icon: BookText
+---
+
+**Turunan** adalah pengukuran terhadap bagaimana nilai suatu fungsi berubah seiring perubahan nilai inputnya.  Secara geometris, turunan merepresentasikan **kemiringan (gradien)** garis singgung pada suatu titik di kurva.
+
+## 1. Konsep Dasar
+
+### 1.1 Definisi Formal (Menggunakan Limit)
+
+Turunan didefinisikan menggunakan limit.  Notasi $\Delta x$ melambangkan perubahan kecil pada variabel $x$.
+
+```math
+  f'(x) = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+```
+
+### 1.2 Notasi Turunan
+
+| Notasi | Dibaca | Keterangan |
+|--------|--------|------------|
+| $f'(x)$ | f aksen x | Notasi Lagrange |
+| $\frac{dy}{dx}$ | dy per dx | Notasi Leibniz |
+| $\frac{df}{dx}$ | df per dx | Notasi Leibniz |
+| $Df(x)$ | D dari f(x) | Notasi Euler |
+
+### 1.3 Interpretasi Geometris
+
+Turunan $f'(a)$ menyatakan kemiringan garis singgung kurva $y = f(x)$ di titik $x = a$.
+
+---
+
+## 2. Rumus-Rumus Dasar
+
+### 2.1 Turunan Konstanta
+
+Jika $f(x) = k$ (konstanta), maka turunannya selalu nol. 
+
+$$f'(x) = 0$$
+
+**Contoh:** $f(x) = 5 \quad \Rightarrow \quad f'(x) = 0$
+
+---
+
+### 2.2 Aturan Pangkat (Power Rule)
+
+Jika $f(x) = ax^n$, maka: 
+
+$$f'(x) = n \cdot a \cdot x^{n-1}$$
+
+<Callout type="info" emoji="💡">
+  **Cara Cepat:** "Pangkat turun ke depan dikali koefisien, lalu pangkatnya dikurangi satu."
+</Callout>
+
+**Contoh:**
+- $f(x) = x^3 \quad \Rightarrow \quad f'(x) = 3x^2$
+- $f(x) = 5x^4 \quad \Rightarrow \quad f'(x) = 20x^3$
+- $f(x) = x \quad \Rightarrow \quad f'(x) = 1$
+
+---
+
+### 2.3 Penjumlahan dan Pengurangan
+
+Turunan dari penjumlahan/pengurangan fungsi adalah jumlah/selisih dari turunannya. 
+
+$$(f \pm g)' = f'(x) \pm g'(x)$$
+
+---
+
+## 3. Contoh Soal Dasar
+
+### Soal 1: Polinomial
+
+**Soal:** Tentukan turunan dari $y = 2x^4 - 6x + 15$.
+
+**Penyelesaian:**
+
+Turunkan setiap suku secara terpisah: 
+
+| Suku | Proses | Hasil |
+|------|--------|-------|
+| $2x^4$ | $4 \cdot 2 \cdot x^{4-1}$ | $8x^3$ |
+| $-6x$ | $1 \cdot (-6) \cdot x^{1-1}$ | $-6$ |
+| $15$ | Konstanta | $0$ |
+
+**Hasil akhir:** $y' = 8x^3 - 6$
+
+---
+
+### Soal 2: Akar dan Pecahan
+
+**Soal:** Tentukan turunan dari $f(x) = \sqrt{x} + \frac{1}{x^2}$.
+
+**Penyelesaian:**
+
+**Langkah 1:** Ubah ke bentuk pangkat
+
+$$f(x) = x^{1/2} + x^{-2}$$
+
+**Langkah 2:** Turunkan
+
+```math
+  \begin{aligned}
+  f'(x) &= \frac{1}{2}x^{1/2-1} + (-2)x^{-2-1} \\[8pt]
+  &= \frac{1}{2}x^{-1/2} - 2x^{-3} \\[8pt]
+  &= \frac{1}{2\sqrt{x}} - \frac{2}{x^3}
+  \end{aligned}
+```
+
+---
+
+## 4. Aturan Lanjut
+
+### 4.1 Aturan Rantai (Chain Rule)
+
+Digunakan untuk fungsi komposisi (fungsi di dalam fungsi), seperti $y = (u(x))^n$.
+
+$$
+  \frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)
+$$
+
+Atau dalam bentuk yang lebih sederhana:
+
+$$
+  \text{Jika } y = u^n \quad \text{maka} \quad y' = n \cdot u^{n-1} \cdot u'
+$$
+
+<Callout type="info" emoji="🔗">
+  **Konsep:** Turunkan fungsi luarnya (anggap fungsi dalam sebagai variabel biasa), lalu **kalikan** dengan turunan fungsi dalamnya. 
+</Callout>
+
+**Contoh:** Tentukan turunan $y = (3x^2 - 5)^4$.
+
+**Penyelesaian:**
+
+- Fungsi dalam: $u = 3x^2 - 5 \quad \Rightarrow \quad u' = 6x$
+- Fungsi luar: $(u)^4$
+
+$$
+  \begin{aligned}
+  y' &= 4(3x^2 - 5)^{4-1} \cdot (6x) \\[8pt]
+  &= 4 \cdot 6x \cdot (3x^2 - 5)^3 \\[8pt]
+  &= 24x(3x^2 - 5)^3
+  \end{aligned}
+$$
+
+---
+
+### 4.2 Aturan Perkalian (Product Rule)
+
+Digunakan jika $f(x)$ adalah hasil kali dua fungsi. 
+
+$$
+  \text{Jika } f(x) = u \cdot v \quad \text{maka} \quad f'(x) = u' \cdot v + u \cdot v'
+$$
+
+<Callout type="info" emoji="💡">
+  **Hafalan:** "Turunan depan kali belakang, ditambah depan kali turunan belakang."
+</Callout>
+
+**Contoh:** Tentukan turunan $y = (2x + 3)(x^2)$.
+
+**Penyelesaian:**
+
+- Misal $u = 2x + 3 \quad \Rightarrow \quad u' = 2$
+- Misal $v = x^2 \quad \Rightarrow \quad v' = 2x$
+
+$$
+  \begin{aligned}
+  y' &= u' \cdot v + u \cdot v' \\[8pt]
+  &= (2)(x^2) + (2x+3)(2x) \\[8pt]
+  &= 2x^2 + 4x^2 + 6x \\[8pt]
+  &= 6x^2 + 6x
+  \end{aligned}
+$$
+
+---
+
+### 4.3 Aturan Pembagian (Quotient Rule)
+
+Digunakan jika $f(x)$ adalah pembagian dua fungsi.
+
+```math
+  \text{Jika } f(x) = \frac{a}{b} \quad \text{maka} \quad f'(x) = \frac{a' \cdot b - a \cdot b'}{b^2}
+```
+
+<Callout type="warning" emoji="⚠️">
+  **Hati-hati! ** Tandanya adalah **kurang (-)**, dan urutannya tidak boleh terbalik.
+  
+  **Hafalan:** "Turunan atas kali bawah, **dikurang** atas kali turunan bawah, dibagi bawah kuadrat."
+</Callout>
+
+**Contoh:** Tentukan turunan $y = \frac{x^2}{x+1}$.
+
+**Penyelesaian:**
+
+- Atas: $a = x^2 \quad \Rightarrow \quad a' = 2x$
+- Bawah:  $b = x+1 \quad \Rightarrow \quad b' = 1$
+
+```math
+  \begin{aligned}
+  y' &= \frac{u' \cdot v - u \cdot v'}{v^2} \\[8pt]
+  &= \frac{(2x)(x+1) - (x^2)(1)}{(x+1)^2} \\[8pt]
+  &= \frac{2x^2 + 2x - x^2}{(x+1)^2} \\[8pt]
+  &= \frac{x^2 + 2x}{(x+1)^2}
+  \end{aligned}
+```
+
+---
+
+## 5. Ringkasan Rumus
+
+| Aturan | Rumus |
+|--------|-------|
+| Konstanta | $\frac{d}{dx}(k) = 0$ |
+| Pangkat | $\frac{d}{dx}(x^n) = nx^{n-1}$ |
+| Perkalian | $(ab)' = a'b + ab'$ |
+| Pembagian | $\left(\frac{a}{b}\right)' = \frac{a'b - ab'}{b^2}$ |
+| Rantai | $\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$ |
+
+---
+
+## 💡 Tips Mengerjakan Soal
+
+> **Ubah bentuk terlebih dahulu!** Akar dan pecahan sebaiknya diubah ke bentuk pangkat sebelum diturunkan. 
+
+> **Identifikasi aturan yang tepat!** Perhatikan apakah fungsi berupa perkalian, pembagian, atau komposisi.
+
+> **Hati-hati dengan tanda!** Terutama pada aturan pembagian yang menggunakan pengurangan.

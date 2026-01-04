@@ -1,0 +1,129 @@
+---
+title:  Pengenalan Sistem Bilangan
+description: Memahami bilangan real, imajiner, dan kompleks sebagai fondasi Kalkulus 1
+program_studi: [teknik_informatika, sistem_informasi, sistem_komputer]
+icon: BookText
+---
+
+Sebelum mempelajari Limit dan Turunan, kita harus memahami bahasa dasar matematika yaitu **Sistem Bilangan**.  Pemahaman yang kuat tentang jenis-jenis bilangan akan membantu Anda menguasai konsep kalkulus dengan lebih mudah.
+
+## 1. Jenis-Jenis Bilangan
+
+### 1.1 Hierarki Sistem Bilangan
+
+| Simbol | Nama | Contoh |
+|--------|------|--------|
+| $\mathbb{N}$ | Bilangan Asli | 1, 2, 3, 4, ...  |
+| $\mathbb{Z}$ | Bilangan Bulat | ..., -2, -1, 0, 1, 2, ... |
+| $\mathbb{Q}$ | Bilangan Rasional | 1/2, 3/4, -2/3, ...  |
+| $\mathbb{R}$ | Bilangan Real | π, √2, e, 3.14, ... |
+| $\mathbb{C}$ | Bilangan Kompleks | 3+2i, 1-i, 5i, ... |
+
+---
+
+## 2. Bilangan Real ($\mathbb{R}$)
+
+### 2.1 Definisi
+
+**Bilangan real** adalah bilangan yang dapat digambarkan di sepanjang garis bilangan tak hingga. Bilangan ini mencakup semua bilangan rasional dan irasional.
+
+>**Definisi Formal:** Bilangan yang ada di garis bilangan, termasuk bilangan bulat, pecahan, dan desimal (baik berakhir maupun tak berakhir).
+
+### 2.2 Contoh Bilangan Real
+
+```math
+2, \quad 4, \quad \sqrt{2}, \quad \sqrt{\frac{14}{3}}, \quad -5, \quad \pi, \quad e
+```
+
+### 2.3 Karakteristik
+
+- Dapat direpresentasikan pada garis bilangan
+- Memiliki urutan (dapat dibandingkan:  lebih besar, lebih kecil, atau sama)
+- Termasuk bilangan rasional (seperti 1/2, 3) dan irasional (seperti √2, π)
+
+---
+
+## 3. Bilangan Imajiner ($i$)
+
+### 3.1 Definisi
+
+Bilangan imajiner muncul ketika kita mencoba mencari akar kuadrat dari bilangan negatif. Satuan dasar imajiner dilambangkan dengan $i$.
+
+<Callout type="info" emoji="💡">
+**Definisi Penting!**
+  $$\sqrt{-1} = i \quad \text{maka} \quad i^2 = -1$$
+</Callout>
+
+### 3.2 Mengapa Bilangan Imajiner Diperlukan? 
+
+Dalam bilangan real, kita tidak dapat menghitung $\sqrt{-1}$ karena tidak ada bilangan real yang jika dikuadratkan menghasilkan bilangan negatif. Oleh karena itu, matematikawan menciptakan satuan imajiner $i$ untuk memperluas sistem bilangan. 
+
+### 3.3 Contoh Perhitungan
+
+**Contoh 1:**
+$$\sqrt{-4} = \sqrt{4(-1)} = \sqrt{4} \sqrt{-1} = 2i$$
+
+**Contoh 2:**
+$$\sqrt{-9} = \sqrt{9(-1)} = \sqrt{9} \sqrt{-1} = 3i$$
+
+**Contoh 3:**
+$$\sqrt{-25} = \sqrt{25(-1)} = 5i$$
+
+### 3.4 Pangkat dari $i$
+
+Perhatikan pola berikut yang sangat berguna dalam perhitungan: 
+
+| Pangkat | Nilai |
+|---------|-------|
+| $i^1$ | $i$ |
+| $i^2$ | $-1$ |
+| $i^3$ | $-i$ |
+| $i^4$ | $1$ |
+| $i^5$ | $i$ (pola berulang) |
+
+<Callout type="info" emoji="🔄">
+**Pola Berulang!** Pangkat $i$ memiliki siklus 4. Untuk menghitung $i^n$, cari sisa pembagian $n \div 4$. 
+</Callout>
+
+---
+
+## 4. Bilangan Kompleks ($\mathbb{C}$)
+
+### 4.1 Definisi
+
+Bilangan kompleks adalah gabungan dari bilangan real dan bilangan imajiner, ditulis dalam bentuk: 
+
+$$z = a + bi$$
+
+Dimana: 
+- $a$ = bagian real (Re)
+- $b$ = bagian imajiner (Im)
+- $i$ = satuan imajiner
+
+### 4.2 Contoh Identifikasi
+
+| Bilangan Kompleks | Bagian Real | Bagian Imajiner |
+|-------------------|-------------|-----------------|
+| $3 + 2i$ | 3 | 2 |
+| $-5 + 7i$ | -5 | 7 |
+| $4 - 3i$ | 4 | -3 |
+| $6i$ | 0 | 6 |
+| $-2$ | -2 | 0 |
+
+---
+
+## 5. Ringkasan
+
+| Jenis Bilangan | Simbol | Karakteristik | Contoh |
+|----------------|--------|---------------|--------|
+| Real | $\mathbb{R}$ | Ada di garis bilangan | $3, \sqrt{2}, \pi$ |
+| Imajiner | - | Kelipatan dari $i$ | $2i, -5i$ |
+| Kompleks | $\mathbb{C}$ | Gabungan real + imajiner | $3+2i, 4-i$ |
+
+---
+
+## 💡 Catatan Penting
+
+> **Hubungan antar bilangan:** Semua bilangan real adalah bilangan kompleks dengan bagian imajiner = 0. Contoh: $5 = 5 + 0i$.
+
+> **Langkah selanjutnya:** Setelah memahami konsep dasar ini, Anda siap mempelajari operasi pada bilangan kompleks di bab berikutnya!
