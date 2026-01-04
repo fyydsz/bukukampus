@@ -2,9 +2,10 @@
   "name": "bukukampus-f",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "start": "next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "postinstall": "fumadocs-mdx",
@@ -14,10 +15,15 @@
     "fumadocs-core": "16.4.3",
     "fumadocs-mdx": "14.2.4",
     "fumadocs-ui": "16.4.3",
+    "katex": "^0.16.27",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "tsx": "^4.21.0",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
@@ -25,10 +31,10 @@
     "@types/node": "^24.10.2",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.1.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3",
-    "eslint-config-next": "16.1.1",
-    "eslint": "^9.39.2"
+    "typescript": "^5.9.3"
   }
 }
