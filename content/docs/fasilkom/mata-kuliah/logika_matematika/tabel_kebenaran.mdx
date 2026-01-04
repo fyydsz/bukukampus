@@ -1,0 +1,155 @@
+---
+title: Tabel Kebenaran
+description: Panduan lengkap membuat tabel kebenaran, rumus penentuan baris, dan contoh penyelesaian ekspresi logika.
+program_studi: [teknik_informatika, sistem_informasi]
+icon: BookText 
+---
+
+# 📊 Tabel Kebenaran
+
+Tabel kebenaran adalah suatu tabel yang menunjukkan secara sistematis satu demi satu nilai-nilai kebenaran sebagai hasil kombinasi dari proposisi-proposisi yang sederhana.
+
+Setiap kalimat pada logika proposisi memiliki salah satu nilai: **True (T)** atau **False (F)**. Arti kalimat yang kompleks merupakan fungsi dari nilai kebenaran variabel-variabel penyusunnya.
+
+## Review Operator Logika
+
+Sebelum menyusun tabel yang kompleks, kita harus mengingat kembali 5 perangkai dasar ditambah 1 perangkai tambahan (XOR). Berikut adalah **Master Tabel Kebenaran** untuk semua operator:
+
+| A | B | Negasi<br/>($\neg A$) | Konjungsi<br/>($A \wedge B$) | Disjungsi<br/>($A \vee B$) | Implikasi<br/>($A \to B$) | Biimplikasi<br/>($A \leftrightarrow B$) | XOR<br/>($A \oplus B$) |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **F** | **F** | T | F | F | T | T | F |
+| **F** | **T** | T | F | T | T | F | T |
+| **T** | **F** | F | F | T | F | F | T |
+| **T** | **T** | F | T | T | T | T | F |
+
+*Tabel di atas disusun berdasarkan input.*
+
+## Cara Membuat Tabel Kebenaran
+
+Untuk membuat tabel kebenaran yang benar, kita menggunakan rumus matematika sederhana untuk menentukan jumlah baris dan pola pengisiannya.
+
+<Callout type="info" emoji="ax">
+  **Rumus Jumlah Baris:**
+  ```math
+  2^n
+  ```
+  Dimana $n$ adalah jumlah variabel input (1, 2, 3, dst).
+</Callout>
+
+### Pola Pengisian Kolom Input
+Pengisian tabel dimulai dari sisi **paling kiri** ke kanan, namun pola perubahannya dihitung menggunakan rumus $2^m$ (dimana $m=0, 1, 2...$) dimulai dari kanan.
+
+#### 1. Satu Variabel ($n=1$)
+Jumlah baris: $2^1 = 2$.
+
+| A |
+| :-: |
+| F |
+| T |
+
+#### 2. Dua Variabel ($n=2$)
+Jumlah baris: $2^2 = 4$.
+* **Kolom A (Kiri):** $2^1 = 2$ (2 baris F, lalu 2 baris T).
+* **Kolom B (Kanan):** $2^0 = 1$ (Selang-seling setiap 1 baris).
+
+| A | B |
+| :-: | :-: |
+| F | F |
+| F | T |
+| T | F |
+| T | T |
+
+#### 3. Tiga Variabel ($n=3$)
+Jumlah baris: $2^3 = 8$.
+
+| A | B | C |
+| :-: | :-: | :-: |
+| T | T | T |
+| T | T | F |
+| T | F | T |
+| T | F | F |
+| F | T | T |
+| F | T | F |
+| F | F | T |
+| F | F | F |
+
+## Contoh Soal & Pembahasan
+
+Berikut adalah langkah-langkah mengubah pernyataan kalimat menjadi tabel kebenaran.
+
+### Contoh 1
+**Pernyataan:** "Tata memakai kaca mata dan tidak memakai sepatu".
+
+<Steps>
+
+<Step>
+#### Tentukan Variabel
+* $A$ = Tata memakai kaca mata
+* $B$ = Tata memakai sepatu
+</Step>
+
+<Step>
+#### Buat Ekspresi Logika
+Kata hubung "dan" berarti konjungsi ($\wedge$), "tidak" berarti negasi ($\neg$).
+Ekspresi: $A \wedge \neg B$
+</Step>
+
+<Step>
+#### Susun Tabel Kebenaran
+Kita butuh kolom bantuan untuk $\neg B$ sebelum mencari hasil akhir.
+
+| A | B | $\neg B$ | $A \wedge \neg B$ |
+| :-: | :-: | :-: | :-: |
+| F | F | T | **F** |
+| F | T | F | **F** |
+| T | F | T | **T** |
+| T | T | F | **F** |
+
+**Penjelasan:** Kolom hasil (ke-4) didapat dari mengonjungsikan Kolom 1 ($A$) dan Kolom 3 ($\neg B$).
+</Step>
+
+</Steps>
+
+### Contoh 2 (Kompleks)
+**Pernyataan:** "Jika Tata tidak pergi kuliah maka Tata naik motor atau tidak memakai sepatu".
+
+<Steps>
+
+<Step>
+#### Tentukan Variabel
+* $p$ = Tata pergi kuliah
+* $q$ = Tata naik motor
+* $r$ = Tata memakai sepatu
+</Step>
+
+<Step>
+#### Buat Ekspresi Logika
+* "Jika... maka..." = Implikasi ($\to$)
+* "Tidak pergi kuliah" = $\neg p$
+* "Atau" = Disjungsi ($\vee$)
+* "Tidak memakai sepatu" = $\neg r$
+
+Ekspresi: $\neg p \to (q \vee \neg r)$
+</Step>
+
+<Step>
+#### Susun Tabel Kebenaran (8 Baris)
+Kita perlu memecah ekspresi menjadi beberapa kolom bantuan: $\neg p$, $\neg r$, dan bagian dalam kurung $q \vee \neg r$.
+
+| p | q | r | $\neg p$ | $\neg r$ | $q \vee \neg r$ | $\neg p \to (q \vee \neg r)$ |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| F | F | F | T | T | T | **T** |
+| F | F | T | T | F | F | **F** |
+| F | T | F | T | T | T | **T** |
+| F | T | T | T | F | T | **T** |
+| T | F | F | F | T | T | **T** |
+| T | F | T | F | F | F | **T** |
+| T | T | F | F | T | T | **T** |
+| T | T | T | F | F | T | **T** |
+</Step>
+
+</Steps>
+
+**Cara Membaca:**
+1.  Kolom **ke-6** ($q \vee \neg r$) didapat dari Disjungsi kolom **q** dan **$\neg r$**.
+2.  Kolom **Hasil Akhir** didapat dari Implikasi kolom **$\neg p$** terhadap kolom **ke-6**. Ingat aturan implikasi: Hanya bernilai Salah jika T bertemu F.

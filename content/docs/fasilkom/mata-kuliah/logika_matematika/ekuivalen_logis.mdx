@@ -1,0 +1,63 @@
+---
+title: Ekuivalensi Logis
+description: Konsep dua proposisi majemuk yang memiliki nilai kebenaran yang sama, cara pembuktiannya dengan tabel kebenaran, dan contoh-contohnya.
+program_studi: [teknik_informatika, sistem_informasi]
+icon: BookText 
+---
+
+# 🧮 Ekuivalensi Logis
+**Ekuivalensi Logis** adalah kondisi di mana dua buah proposisi majemuk, meskipun memiliki susunan kata atau struktur (sintaksis) yang berbeda, menghasilkan **nilai kebenaran** yang identik pada setiap kemungkinan kasus.
+
+Kedua proposisi tersebut dikatakan memiliki **makna logis yang sama**.
+
+## Definisi & Notasi
+Dua proposisi, misalnya $P$ dan $Q$, dinyatakan ekuivalen jika dan hanya jika kolom nilai kebenaran akhir pada tabel kebenaran mereka sama persis.
+
+Ekuivalensi Logis disimbolkan dengan:
+
+$$P \equiv Q$$
+
+<Callout type="info" emoji="ℹ️">
+  Ekuivalensi antara $P$ dan $Q$ ( $P \equiv Q$ ) juga berarti proposisi bikondisional $P \leftrightarrow Q$ merupakan **Tautologi** (selalu benar).
+</Callout>
+
+## Membuktikan Ekuivalensi dengan Tabel Kebenaran
+
+### Contoh 1: Ekuivalensi Disjungsi  
+Buktikan bahwa $p \vee q$ ekuivalen dengan $\neg(\neg p \wedge \neg q)$.
+
+| $p$ | $q$ | $p \vee q$ | $\neg p$ | $\neg q$ | $\neg p \wedge \neg q$ | $\neg(\neg p \wedge \neg q)$ |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| T | T | **T** | F | F | F | **T** |
+| T | F | **T** | F | T | F | **T** |
+| F | T | **T** | T | F | F | **T** |
+| F | F | **F** | T | T | T | **F** |
+
+**Kesimpulan:** Karena kolom $p \vee q$ dan $\neg(\neg p \wedge \neg q)$ identik (T, T, T, F), maka keduanya ekuivalen.
+
+### Contoh 2: Ekuivalensi Implikasi
+
+Misalkan $A$ = Anda tidak belajar, dan $B$ = Anda gagal.  
+Ekspresi: $A \to B \equiv \neg A \vee B$
+
+| $A$ | $B$ | $A \to B$ | $\neg A$ | $\neg A \vee B$ |
+| :---: | :---: | :---: | :---: | :---: |
+| F | F | **T** | T | **T** |
+| F | T | **T** | T | **T** |
+| T | F | **F** | F | **F** |
+| T | T | **T** | F | **T** |
+
+**Kesimpulan:** Kolom $A \to B$ dan $\neg A \vee B$ identik.
+
+### Contoh 3: Ekuivalensi Kontraposisi
+
+Dengan $A$ = Bedu sekolah, $B$ = Bedu pandai.
+
+| $A$ | $B$ | $\neg A$ | $\neg B$ | $\neg A \to \neg B$ | $B \to A$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| F | F | T | T | **T** | **T** |
+| F | T | T | F | **F** | **F** |
+| T | F | F | T | **T** | **T** |
+| T | T | F | F | **T** | **T** |
+
+**Kesimpulan:** Kolom $\neg A \to \neg B$ dan $B \to A$ identik.

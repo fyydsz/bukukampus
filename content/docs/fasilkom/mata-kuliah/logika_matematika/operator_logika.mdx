@@ -1,0 +1,132 @@
+---
+title: Operator Logika
+description: Memahami jenis-jenis perangkai logika (Negasi, Konjungsi, Disjungsi, Implikasi, Biimplikasi, dan XOR).
+program_studi: [teknik_informatika, sistem_informasi]
+icon: BookText
+---
+
+
+# 🔗 Operator Logika
+
+Dalam logika matematika, proposisi-proposisi tunggal dapat digabungkan menjadi proposisi majemuk menggunakan **Operator Logika** (atau disebut juga *perangkai logika* / *logical connectives*).
+
+Setiap operator memiliki simbol dan aturan nilai kebenaran yang unik. Berikut adalah pembahasan lengkapnya.
+
+## 1. Negasi / Ingkaran (Negation)
+
+Negasi adalah operasi yang membalikkan nilai kebenaran suatu proposisi.
+
+* **Simbol:** $\neg$ atau $\sim$
+* **Kata kunci:** "Tidak", "Bukan", "Tidak benar bahwa"
+* **Prinsip:** Jika $p$ benar, maka $\neg p$ salah, dan sebaliknya.
+
+| $p$ | $\neg p$ |
+| :---: | :---: |
+| T | **F** |
+| F | **T** |
+
+---
+
+## 2. Konjungsi (Conjunction)
+
+Konjungsi menghubungkan dua pernyataan yang bernilai benar **hanya jika keduanya benar**.
+
+* **Simbol:** $\wedge$
+* **Kata kunci:** "Dan", "Serta", "Tetapi", "Walaupun"
+* **Prinsip:** True hanya jika **semua** komponennya True.
+
+| $p$ | $q$ | $p \wedge q$ |
+| :---: | :---: | :---: |
+| T | T | **T** |
+| T | F | F |
+| F | T | F |
+| F | F | F |
+
+<Callout type="info" emoji="💡">
+  **Tips Ingat:** Konjungsi itu seperti "Bos yang kaku". Dia hanya mau bilang "YA" (True) kalau semua syaratnya terpenuhi (True). Kalau ada satu saja yang salah, dia tolak (False).
+</Callout>
+
+---
+
+## 3. Disjungsi (Disjunction)
+
+Disjungsi (inklusif) bernilai benar jika **salah satu atau kedua** pernyataan penyusunnya benar.
+
+* **Simbol:** $\vee$
+* **Kata kunci:** "Atau"
+* **Prinsip:** False hanya jika **keduanya** False.
+
+| $p$ | $q$ | $p \vee q$ |
+| :---: | :---: | :---: |
+| T | T | **T** |
+| T | F | **T** |
+| F | T | **T** |
+| F | F | **F** |
+
+---
+
+## 4. Implikasi (Implication)
+
+Implikasi menunjukkan hubungan sebab-akibat (kausalitas) atau syarat.
+
+* **Simbol:** $\to$ atau $\implies$
+* **Kata kunci:** "Jika ... maka ...", "... mengakibatkan ...", "... syarat cukup bagi ..."
+* **Prinsip:** Hanya bernilai **False** jika Sebabnya Benar (T) tapi Akibatnya Salah (F). Selebihnya True.
+
+| $p$ (Sebab) | $q$ (Akibat) | $p \to q$ |
+| :---: | :---: | :---: |
+| T | T | **T** |
+| T | F | **F** |
+| F | T | **T** |
+| F | F | **T** |
+
+<Callout type="warning" emoji="⚠️">
+  **Perhatian!** Jika sebabnya Salah ($F$), implikasi akan selalu bernilai **True**, tidak peduli apa akibatnya. Ini disebut *vacuously true*.
+</Callout>
+
+---
+
+## 5. Biimplikasi (Bi-implication)
+
+Biimplikasi adalah pernyataan bersyarat dua arah.
+
+* **Simbol:** $\leftrightarrow$ atau $\iff$
+* **Kata kunci:** "... jika dan hanya jika ...", "bila dan hanya bila"
+* **Prinsip:** Bernilai **True** jika kedua pernyataan memiliki nilai kebenaran yang **sama** (keduanya T atau keduanya F).
+
+| $p$ | $q$ | $p \leftrightarrow q$ |
+| :---: | :---: | :---: |
+| T | T | **T** |
+| T | F | F |
+| F | T | F |
+| F | F | **T** |
+
+---
+
+## 6. Exclusive OR (XOR)
+
+XOR sering digunakan dalam teknik informatika dan gerbang logika.
+
+* **Simbol:** $\oplus$
+* **Kata kunci:** "Salah satu, tapi tidak keduanya"
+* **Prinsip:** Bernilai **True** jika kedua pernyataan memiliki nilai kebenaran yang **berbeda**.
+
+| $p$ | $q$ | $p \oplus q$ |
+| :---: | :---: | :---: |
+| T | T | F |
+| T | F | **T** |
+| F | T | **T** |
+| F | F | F |
+
+---
+
+## Ringkasan Tabel Kebenaran
+
+Berikut adalah tabel gabungan untuk memudahkan menghafal:
+
+| p | q | $p \wedge q$ | $p \vee q$ | $p \to q$ | $p \leftrightarrow q$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| T | T | T | T | T | T |
+| T | F | F | T | **F** | F |
+| F | T | F | T | T | F |
+| F | F | F | F | T | T |
