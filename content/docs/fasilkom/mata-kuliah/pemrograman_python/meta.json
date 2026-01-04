@@ -1,0 +1,9 @@
+{
+  "pages": [ 
+    "install",
+    "sintaks_dasar",
+    "operator_aritmatika",
+    "percabangan",
+    "perulangan"
+  ]
+}
