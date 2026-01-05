@@ -12,6 +12,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "fumadocs-core": "16.4.3",
     "fumadocs-mdx": "14.2.4",
     "fumadocs-ui": "16.4.3",
@@ -22,6 +23,7 @@
     "react-dom": "^19.2.3",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
+    "tailwind-merge": "^3.4.0",
     "tsx": "^4.21.0",
     "zod": "^4.3.5"
   },
