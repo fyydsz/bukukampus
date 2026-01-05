@@ -1,5 +1,5 @@
 import { getPageImage, source } from '@/lib/source';
-import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/docs/page';
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/layouts/notebook/page';
 import { notFound } from 'next/navigation';
 import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
@@ -33,7 +33,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
         single: false
       }}
       full={false}
-      
+
     >
       <div className="mb-6">
 
@@ -41,8 +41,8 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
         <div className="h-2" />
         <div className="flex items-center gap-2">
           <a
-            href={`https://github.com/fyydsz/bukukampus/tree/master/content/docs/${page.path}`}
-            target="_blank" 
+            href={`https://github.com/fyydsz/bukukampus/tree/fumadocs/content/docs/${page.path}`}
+            target="_blank"
             rel="noreferrer noopener"
             className="inline-flex items-center gap-1.5 px-2 py-1 text-xs text-fd-muted-foreground hover:text-fd-foreground border border-fd-border rounded hover:bg-fd-muted/50 transition-colors"
           >
@@ -74,7 +74,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
 
 /**
  * Generate static params for documentation pages.
- * @returns 
+ * @returns
  */
 export async function generateStaticParams() {
   return source.generateParams();
@@ -103,7 +103,7 @@ export async function generateMetadata(props: PageProps<'/docs/[[...slug]]'>): P
  * ProgramStudyCourses component to display courses related to a specific program studi.
  * @param programStudi: string
  * @param className: string
- * @returns 
+ * @returns
  */
 function ProgramStudyCourses({ programStudi, className }: { programStudi?: string; className?: string }) {
   if (!programStudi) return null;
@@ -125,7 +125,7 @@ function ProgramStudyCourses({ programStudi, className }: { programStudi?: strin
 /**
  * DocsCategory component to display sibling pages as cards.
  * @param url: string
- * @returns 
+ * @returns
  */
 function DocsCategory({ url }: { url: string }) {
   return (
